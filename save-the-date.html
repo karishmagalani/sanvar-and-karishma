@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save the Date — Sanvar & Karishma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --white: #ffffff;
+      --charcoal: #1a1714;
+      --charcoal-soft: #6b6360;
+      --gold: #c4a265;
+      --gold-muted: #bfa76e;
+      --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+      --font-label: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #e0ddd7;
+      font-family: var(--font-heading);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========================================
+       CARD — 5×7 ratio (1050×1470)
+       ======================================== */
+    .card {
+      width: 1050px;
+      height: 1470px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ========================================
+       MARIGOLD DECORATIONS
+       Scattered playfully like the hand-drawn
+       illustrations in the example
+       ======================================== */
+    .marigold {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .marigold img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Top-left cluster — peeks from above the S */
+    .m1 {
+      top: 60px; left: 55px;
+      width: 135px; height: 135px;
+      transform: rotate(-12deg);
+      opacity: 0.88;
+    }
+
+    /* Right side — beside "THE" */
+    .m2 {
+      top: 330px; right: 65px;
+      width: 115px; height: 115px;
+      transform: rotate(18deg);
+      opacity: 0.82;
+    }
+
+    /* Left side — next to "DATE" */
+    .m3 {
+      top: 680px; left: 50px;
+      width: 105px; height: 105px;
+      transform: rotate(-22deg) scaleX(-1);
+      opacity: 0.78;
+    }
+
+    /* Small accent — between title and details */
+    .m4 {
+      top: 910px; right: 180px;
+      width: 75px; height: 75px;
+      transform: rotate(35deg);
+      opacity: 0.7;
+    }
+
+    /* Bottom-right — near venue */
+    .m5 {
+      bottom: 120px; right: 70px;
+      width: 120px; height: 120px;
+      transform: rotate(-8deg) scaleX(-1);
+      opacity: 0.82;
+    }
+
+    /* Bottom-left — balances bottom */
+    .m6 {
+      bottom: 180px; left: 60px;
+      width: 90px; height: 90px;
+      transform: rotate(25deg);
+      opacity: 0.65;
+    }
+
+    /* Tiny accent near names */
+    .m7 {
+      top: 1050px; left: 200px;
+      width: 55px; height: 55px;
+      transform: rotate(-40deg);
+      opacity: 0.55;
+    }
+
+    /* ========================================
+       LARGE STACKED TITLE
+       Bold editorial typography — the hero
+       ======================================== */
+    .title-block {
+      position: absolute;
+      top: 100px;
+      left: 0; right: 0;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .title-block h1 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 148px;
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      color: var(--charcoal);
+      text-transform: uppercase;
+    }
+
+    .title-block h1 .line {
+      display: block;
+    }
+
+    .title-block h1 .the {
+      font-size: 90px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      font-style: italic;
+      text-transform: lowercase;
+    }
+
+    /* ========================================
+       COUPLE PHOTO — small, editorial
+       ======================================== */
+    .photo-circle {
+      position: absolute;
+      top: 480px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 4;
+      border: 3px solid var(--white);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    }
+    .photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+    }
+
+    /* ========================================
+       DETAILS SECTION — below the photo
+       ======================================== */
+    .details {
+      position: absolute;
+      bottom: 100px;
+      left: 0; right: 0;
+      text-align: center;
+      z-index: 3;
+    }
+
+    .details-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 30px;
+    }
+
+    .names {
+      font-family: var(--font-heading);
+      font-size: 72px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: 0.03em;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .names .amp {
+      font-style: italic;
+      font-size: 42px;
+      color: var(--gold-muted);
+      margin: 0 8px;
+      vertical-align: 4px;
+    }
+
+    .date {
+      font-family: var(--font-label);
+      font-size: 15px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 8px;
+      color: var(--charcoal);
+      margin-top: 28px;
+    }
+
+    .location {
+      font-family: var(--font-label);
+      font-size: 11px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--charcoal-soft);
+      margin-top: 14px;
+    }
+
+    .venue {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal-soft);
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .families {
+      font-family: var(--font-label);
+      font-size: 9.5px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--gold);
+      margin-top: 36px;
+    }
+
+    /* ========================================
+       PRINT
+       ======================================== */
+    @media print {
+      html, body { background: white; }
+      .card { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Marigold flowers scattered like illustrations -->
+    <div class="marigold m1"><img src="photos/marigolds/marigold-1.png" alt=""></div>
+    <div class="marigold m2"><img src="photos/marigolds/marigold-2.png" alt=""></div>
+    <div class="marigold m3"><img src="photos/marigolds/marigold-3.png" alt=""></div>
+    <div class="marigold m4"><img src="photos/marigolds/marigold-5.png" alt=""></div>
+    <div class="marigold m5"><img src="photos/marigolds/marigold-4.png" alt=""></div>
+    <div class="marigold m6"><img src="photos/marigolds/marigold-1.png" alt=""></div>
+    <div class="marigold m7"><img src="photos/marigolds/marigold-5.png" alt=""></div>
+
+    <!-- Large stacked editorial title -->
+    <div class="title-block">
+      <h1>
+        <span class="line">Save</span>
+        <span class="line the">the</span>
+        <span class="line">Date</span>
+      </h1>
+    </div>
+
+    <!-- Small circular couple photo -->
+    <div class="photo-circle">
+      <img src="photos/Karishma and Sanvar-07.jpg" alt="Sanvar & Karishma">
+    </div>
+
+    <!-- Details at bottom -->
+    <div class="details">
+      <div class="details-line"></div>
+
+      <h2 class="names">Sanvar <span class="amp">&</span> Karishma</h2>
+
+      <p class="date">April 18 &mdash; 20, 2026</p>
+
+      <p class="location">Rishikesh, India</p>
+      <p class="venue">Anand Kashi</p>
+
+      <p class="families">The Oberois & Galanis</p>
+    </div>
+
+  </div>
+
+</body>
+</html>

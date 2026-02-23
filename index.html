@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanvar & Karishma — Wedding Celebration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ivory: #faf8f4;
+      --cream: #f3ede4;
+      --parchment: #ede6d9;
+      --warm-white: #fffdf9;
+      --charcoal: #2a2522;
+      --charcoal-soft: #5a524c;
+      --gold: #c4a265;
+      --gold-light: #dac9a0;
+      --gold-pale: #efe4cd;
+      --gold-dark: #a07d3a;
+      --terracotta: #c47d5a;
+      --terracotta-soft: #d4a088;
+      --burgundy: #8b4049;
+      --burgundy-soft: #a65d66;
+      --sage: #7a8a6e;
+      --sage-soft: #a3b396;
+      --deep-green: #3d4f3a;
+      --border: #ddd5c8;
+
+      --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+      --font-body: 'Cormorant', 'Georgia', serif;
+      --font-label: 'Josefin Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--warm-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: var(--gold-dark); text-decoration: none; transition: color 0.3s; }
+    a:hover { color: var(--charcoal); }
+
+    /* ========================================
+       ORNAMENTS
+       ======================================== */
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1.5rem auto;
+    }
+    .ornament-line::before,
+    .ornament-line::after {
+      content: '';
+      height: 1px;
+      width: 60px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+    .ornament-line span { color: var(--gold); font-size: 0.8rem; }
+
+    /* ========================================
+       UTILITIES
+       ======================================== */
+    .section-padding { padding: 6rem 1.5rem; }
+    .container { max-width: 960px; margin: 0 auto; }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      text-align: center;
+      color: var(--charcoal);
+      letter-spacing: 0.02em;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      font-weight: 300;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ========================================
+       HEADER
+       ======================================== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(250, 248, 244, 0.93);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .site-header.scrolled {
+      border-bottom-color: var(--border);
+      box-shadow: 0 2px 30px rgba(42, 37, 34, 0.05);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.8rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: 0.05em;
+    }
+    .header-logo span { color: var(--gold); }
+
+    .header-nav { display: flex; gap: 2rem; list-style: none; }
+    .header-nav a {
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--charcoal-soft);
+      transition: color 0.3s;
+    }
+    .header-nav a:hover { color: var(--gold-dark); }
+
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.25rem; }
+    .nav-toggle span { display: block; width: 20px; height: 1.5px; background: var(--charcoal); margin: 5px 0; transition: transform 0.3s, opacity 0.3s; }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: block; }
+      .header-nav {
+        position: absolute; top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        background: rgba(250, 248, 244, 0.97);
+        backdrop-filter: blur(14px);
+        padding: 1rem 1.5rem 1.5rem; gap: 0;
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-10px); opacity: 0; pointer-events: none;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+      .header-nav.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+      .header-nav li { padding: 0.7rem 0; border-bottom: 1px solid var(--border); }
+      .header-nav li:last-child { border-bottom: none; }
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      background: var(--charcoal);
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(250, 248, 244, 0.88) 0%,
+        rgba(250, 248, 244, 0.72) 35%,
+        rgba(250, 248, 244, 0.72) 65%,
+        rgba(250, 248, 244, 0.9) 100%
+      );
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 24px; left: 24px; right: 24px; bottom: 24px;
+      border: 1px solid var(--gold-light);
+      pointer-events: none; z-index: 3;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 30px; left: 30px; right: 30px; bottom: 30px;
+      border: 1px solid rgba(196, 162, 101, 0.25);
+      pointer-events: none; z-index: 3;
+    }
+
+    .hero-content { position: relative; z-index: 4; max-width: 700px; }
+
+    .hero-families {
+      font-family: var(--font-label);
+      font-size: 0.7rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--charcoal-soft);
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 1s ease 0.2s forwards;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-body);
+      font-size: 1.15rem;
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      color: var(--terracotta);
+      margin-bottom: 1rem;
+      opacity: 0; animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .hero-names {
+      font-family: var(--font-heading);
+      font-size: clamp(3.2rem, 11vw, 7rem);
+      font-weight: 300;
+      line-height: 1.05;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+      opacity: 0; animation: fadeUp 1s ease 0.8s forwards;
+    }
+    .hero-names .amp {
+      display: block;
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: 0.3em;
+      color: var(--gold);
+      margin: 0.3em 0;
+      letter-spacing: 0.15em;
+    }
+
+    .hero-ornament { opacity: 0; animation: fadeUp 1s ease 1s forwards; }
+    .hero-ornament .ornament-line::before,
+    .hero-ornament .ornament-line::after { width: 80px; }
+
+    .hero-location {
+      font-family: var(--font-label);
+      font-size: 0.75rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: var(--charcoal-soft);
+      margin-bottom: 0.3rem;
+      opacity: 0; animation: fadeUp 1s ease 1.15s forwards;
+    }
+
+    .hero-date {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: var(--charcoal-soft);
+      margin-bottom: 2.5rem;
+      opacity: 0; animation: fadeUp 1s ease 1.3s forwards;
+    }
+
+    .hero-scroll { opacity: 0; animation: fadeUp 1s ease 1.6s forwards; }
+    .hero-scroll a { display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold-light); }
+    .hero-scroll .arrow { width: 1px; height: 36px; background: var(--gold-light); animation: scrollPulse 2.5s ease-in-out infinite; }
+
+    .hero-corner {
+      position: absolute; width: 60px; height: 60px;
+      border-color: var(--terracotta-soft); border-style: solid; border-width: 0;
+      opacity: 0.3; z-index: 5;
+    }
+    .hero-corner--tl { top: 40px; left: 40px; border-top-width: 2px; border-left-width: 2px; }
+    .hero-corner--tr { top: 40px; right: 40px; border-top-width: 2px; border-right-width: 2px; }
+    .hero-corner--bl { bottom: 40px; left: 40px; border-bottom-width: 2px; border-left-width: 2px; }
+    .hero-corner--br { bottom: 40px; right: 40px; border-bottom-width: 2px; border-right-width: 2px; }
+
+    @media (max-width: 600px) {
+      .hero::before { top: 12px; left: 12px; right: 12px; bottom: 12px; }
+      .hero::after { top: 16px; left: 16px; right: 16px; bottom: 16px; }
+      .hero-corner { width: 35px; height: 35px; }
+      .hero-corner--tl { top: 20px; left: 20px; }
+      .hero-corner--tr { top: 20px; right: 20px; }
+      .hero-corner--bl { bottom: 20px; left: 20px; }
+      .hero-corner--br { bottom: 20px; right: 20px; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.4; transform: scaleY(0.5); }
+    }
+
+    /* ========================================
+       COUNTDOWN
+       ======================================== */
+    .countdown-section {
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 100%);
+      position: relative;
+    }
+    .countdown-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .countdown-grid {
+      display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; margin-top: 1rem;
+    }
+
+    .countdown-card {
+      background: var(--warm-white);
+      border: 1px solid var(--gold-pale);
+      padding: 1.5rem 2rem; min-width: 110px;
+      text-align: center; position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .countdown-card::before {
+      content: ''; position: absolute;
+      top: 4px; left: 4px; right: 4px; bottom: 4px;
+      border: 1px solid rgba(196, 162, 101, 0.15); pointer-events: none;
+    }
+    .countdown-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(42, 37, 34, 0.06); }
+
+    .countdown-number {
+      font-family: var(--font-heading);
+      font-size: 3rem; font-weight: 300; line-height: 1;
+      color: var(--charcoal);
+    }
+    .countdown-label {
+      font-family: var(--font-label);
+      font-size: 0.6rem; font-weight: 300;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--gold); margin-top: 0.5rem;
+    }
+
+    /* ========================================
+       PHOTO BREAKS
+       ======================================== */
+    .photo-break {
+      width: 100%; height: 45vh; min-height: 300px; max-height: 500px;
+      overflow: hidden; position: relative;
+    }
+    .photo-break img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .photo-break::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(180deg, rgba(42, 37, 34, 0.06) 0%, transparent 25%, transparent 75%, rgba(42, 37, 34, 0.06) 100%);
+      pointer-events: none;
+    }
+    .photo-break::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      z-index: 1;
+    }
+
+    /* ========================================
+       SCHEDULE — compact card layout
+       ======================================== */
+    .schedule-section {
+      background: var(--warm-white);
+      position: relative;
+    }
+    .schedule-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .schedule-card {
+      background: var(--ivory);
+      border: 1px solid var(--gold-pale);
+      padding: 2.2rem 1.5rem 2rem;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .schedule-card::before {
+      content: ''; position: absolute;
+      top: 5px; left: 5px; right: 5px; bottom: 5px;
+      border: 1px solid rgba(196, 162, 101, 0.15);
+      pointer-events: none;
+    }
+    .schedule-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(42, 37, 34, 0.07);
+    }
+
+    .schedule-card-label {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--terracotta);
+      margin-bottom: 0.4rem;
+    }
+
+    .schedule-card-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--charcoal);
+      margin-bottom: 0.15rem;
+    }
+
+    .schedule-card-date {
+      font-family: var(--font-label);
+      font-size: 0.58rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--charcoal-soft);
+      margin-bottom: 1.2rem;
+    }
+
+    .schedule-card-line {
+      width: 30px;
+      height: 1px;
+      background: var(--gold-light);
+      margin: 0 auto 1.2rem;
+    }
+
+    .schedule-card-events {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .schedule-card-event {}
+
+    .schedule-card-time {
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--gold);
+      margin-bottom: 0.15rem;
+    }
+
+    .schedule-card-name {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.3;
+    }
+
+    .schedule-card-dot {
+      width: 3px; height: 3px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      margin: 0 auto;
+    }
+
+    .schedule-card--centered {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .schedule-card--centered .schedule-card-date { margin-bottom: 0; }
+
+    @media (max-width: 768px) {
+      .schedule-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        gap: 1rem;
+      }
+    }
+
+    /* ========================================
+       VENUE / STAY
+       ======================================== */
+    .venue-section {
+      background: var(--deep-green);
+      color: var(--cream);
+      position: relative;
+      text-align: center;
+    }
+    .venue-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--sage-soft), transparent);
+    }
+
+    .venue-section .section-subtitle { color: var(--sage-soft); }
+    .venue-section .section-title { color: var(--cream); }
+
+    .venue-section .ornament-line::before,
+    .venue-section .ornament-line::after {
+      background: linear-gradient(90deg, transparent, var(--sage-soft), transparent);
+    }
+    .venue-section .ornament-line span { color: var(--sage-soft); }
+
+    .venue-content {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .venue-content p {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(243, 237, 228, 0.85);
+      line-height: 1.9;
+    }
+    .venue-name {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ========================================
+       GIFT MESSAGE
+       ======================================== */
+    .gift-section {
+      background: var(--warm-white);
+      text-align: center;
+      position: relative;
+    }
+    .gift-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+
+    .gift-message {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal-soft);
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       RSVP
+       ======================================== */
+    .rsvp-section {
+      background: var(--burgundy);
+      color: var(--cream);
+      position: relative;
+    }
+    .rsvp-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--burgundy-soft), transparent);
+    }
+
+    .rsvp-section .section-subtitle { color: var(--terracotta-soft); }
+    .rsvp-section .section-title { color: var(--cream); }
+
+    .rsvp-section .ornament-line::before,
+    .rsvp-section .ornament-line::after {
+      background: linear-gradient(90deg, transparent, var(--terracotta-soft), transparent);
+    }
+    .rsvp-section .ornament-line span { color: var(--terracotta-soft); }
+
+    .rsvp-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .rsvp-content p {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(243, 237, 228, 0.85);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-label);
+      font-size: 0.65rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      padding: 0.85rem 2.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover { background: var(--gold); color: var(--warm-white); }
+
+    .rsvp-section .btn { border-color: var(--gold-light); color: var(--gold-light); }
+    .rsvp-section .btn:hover { background: var(--gold-light); color: var(--burgundy); }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .site-footer {
+      background: var(--charcoal);
+      border-top: 1px solid rgba(196, 162, 101, 0.15);
+      color: var(--cream);
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+    .footer-names {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 0.4rem;
+      color: var(--gold-light);
+    }
+    .footer-note {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: rgba(218, 201, 160, 0.5);
+      letter-spacing: 1px;
+    }
+    .footer-note span { color: var(--terracotta-soft); }
+    .footer-families {
+      font-family: var(--font-label);
+      font-size: 0.6rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: rgba(218, 201, 160, 0.35);
+      margin-top: 1rem;
+    }
+
+    /* ========================================
+       FLOATING MARIGOLDS
+       ======================================== */
+    .marigold-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    .marigold {
+      position: absolute;
+      top: -60px;
+      will-change: transform;
+      animation: marigoldFall linear forwards;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+    }
+
+    @keyframes marigoldFall {
+      0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0;
+      }
+      5% { opacity: 0.85; }
+      85% { opacity: 0.85; }
+      100% {
+        transform: translateY(calc(100vh + 80px)) rotate(var(--rot)) translateX(var(--drift));
+        opacity: 0;
+      }
+    }
+
+    /* Reduce marigolds on mobile for performance */
+    @media (max-width: 600px) {
+      .marigold { filter: none; }
+    }
+
+    /* ========================================
+       STATIONARY MARIGOLD DECORATIONS
+       ======================================== */
+    .marigold-decor {
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.55;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08));
+    }
+    .marigold-decor img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Countdown section — marigold top-right */
+    .countdown-section { position: relative; overflow: hidden; }
+    .countdown-section .marigold-decor.pos-right {
+      top: -30px; right: -20px;
+      width: 160px; height: 160px;
+      transform: rotate(15deg);
+      opacity: 0.4;
+    }
+
+    /* Gift section — marigold bottom-left */
+    .gift-section { overflow: hidden; }
+    .gift-section .marigold-decor.pos-left {
+      bottom: -20px; left: -25px;
+      width: 180px; height: 180px;
+      transform: rotate(-20deg);
+      opacity: 0.45;
+    }
+
+    /* Gift section — marigold top-right */
+    .gift-section .marigold-decor.pos-right {
+      top: -15px; right: -30px;
+      width: 150px; height: 150px;
+      transform: rotate(25deg) scaleX(-1);
+      opacity: 0.4;
+    }
+
+    /* Schedule section — marigolds */
+    .schedule-section { overflow: hidden; }
+    .schedule-section .marigold-decor.pos-left {
+      top: -20px; left: -35px;
+      width: 150px; height: 150px;
+      transform: rotate(-10deg);
+      opacity: 0.3;
+    }
+    .schedule-section .marigold-decor.pos-right {
+      top: -15px; right: -30px;
+      width: 140px; height: 140px;
+      transform: rotate(30deg) scaleX(-1);
+      opacity: 0.3;
+    }
+    .schedule-section .marigold-decor.pos-mid-left {
+      top: 50%; left: -50px;
+      width: 120px; height: 120px;
+      transform: translateY(-50%) rotate(20deg);
+      opacity: 0.22;
+    }
+    .schedule-section .marigold-decor.pos-mid-right {
+      top: 45%; right: -45px;
+      width: 130px; height: 130px;
+      transform: translateY(-50%) rotate(-15deg) scaleX(-1);
+      opacity: 0.22;
+    }
+    .schedule-section .marigold-decor.pos-bottom {
+      bottom: -25px; left: 50%;
+      width: 120px; height: 120px;
+      transform: translateX(-50%) rotate(12deg);
+      opacity: 0.2;
+    }
+
+    /* Countdown section — center-left small accent */
+    .countdown-section .marigold-decor.pos-center {
+      top: 50%; left: 5%;
+      width: 90px; height: 90px;
+      transform: translateY(-50%) rotate(40deg);
+      opacity: 0.2;
+    }
+
+    /* Venue section — marigold right */
+    .venue-section { overflow: hidden; }
+    .venue-section .marigold-decor.pos-right {
+      top: 30px; right: -30px;
+      width: 165px; height: 165px;
+      transform: rotate(20deg);
+      opacity: 0.25;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.3);
+    }
+    .venue-section .marigold-decor.pos-left {
+      bottom: 20px; left: -35px;
+      width: 140px; height: 140px;
+      transform: rotate(-15deg) scaleX(-1);
+      opacity: 0.2;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.3);
+    }
+
+    /* RSVP section — marigold accents */
+    .rsvp-section { overflow: hidden; }
+    .rsvp-section .marigold-decor.pos-left {
+      top: 20px; left: -25px;
+      width: 150px; height: 150px;
+      transform: rotate(-25deg);
+      opacity: 0.18;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.2);
+    }
+    .rsvp-section .marigold-decor.pos-right {
+      bottom: 15px; right: -20px;
+      width: 135px; height: 135px;
+      transform: rotate(35deg) scaleX(-1);
+      opacity: 0.18;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.2);
+    }
+
+    /* Countdown section — add a left marigold too */
+    .countdown-section .marigold-decor.pos-left {
+      bottom: -20px; left: -25px;
+      width: 145px; height: 145px;
+      transform: rotate(-25deg) scaleX(-1);
+      opacity: 0.35;
+    }
+
+    @media (max-width: 768px) {
+      .marigold-decor { opacity: 0.2 !important; }
+      .countdown-section .marigold-decor.pos-right { width: 100px; height: 100px; right: -15px; top: -15px; }
+      .countdown-section .marigold-decor.pos-left { width: 90px; height: 90px; left: -20px; }
+      .gift-section .marigold-decor.pos-left { width: 110px; height: 110px; }
+      .gift-section .marigold-decor.pos-right { width: 90px; height: 90px; }
+      .schedule-section .marigold-decor.pos-left { width: 90px; height: 90px; left: -25px; }
+      .schedule-section .marigold-decor.pos-right { width: 85px; height: 85px; right: -20px; }
+      .schedule-section .marigold-decor.pos-mid-left,
+      .schedule-section .marigold-decor.pos-mid-right { display: none; }
+      .schedule-section .marigold-decor.pos-bottom { width: 80px; height: 80px; }
+      .venue-section .marigold-decor { width: 90px !important; height: 90px !important; }
+      .rsvp-section .marigold-decor { width: 85px !important; height: 85px !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating marigold petals -->
+  <div class="marigold-canvas" id="marigoldCanvas" aria-hidden="true"></div>
+
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <div class="header-logo">S <span>&amp;</span> K</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="header-nav" id="headerNav">
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#venue">Venue</a></li>
+        <li><a href="#rsvp">RSVP</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="photos/mainimage.jpg" alt="Sanvar and Karishma">
+    </div>
+    <div class="hero-corner hero-corner--tl"></div>
+    <div class="hero-corner hero-corner--tr"></div>
+    <div class="hero-corner hero-corner--bl"></div>
+    <div class="hero-corner hero-corner--br"></div>
+
+    <div class="hero-content">
+      <p class="hero-families">The Oberois &amp; Galanis Welcome You</p>
+      <p class="hero-tagline">request the pleasure of your company at the wedding celebration of</p>
+
+      <h1 class="hero-names">
+        Sanvar
+        <span class="amp">&amp;</span>
+        Karishma
+      </h1>
+
+      <div class="hero-ornament">
+        <div class="ornament-line"><span>&#10043;</span></div>
+      </div>
+
+      <p class="hero-location">Rishikesh, India</p>
+      <p class="hero-date">April 18 &mdash; 20, 2026</p>
+
+      <div class="hero-scroll">
+        <a href="#countdown"><span class="arrow"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="countdown-section section-padding" id="countdown">
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-1.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-center"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="container fade-in">
+      <p class="section-subtitle">Counting Down To</p>
+      <h2 class="section-title">The Celebration</h2>
+      <div class="ornament-line"><span>&#10043;</span></div>
+
+      <div class="countdown-grid">
+        <div class="countdown-card">
+          <div class="countdown-number" id="countdown-days">---</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="countdown-hours">--</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="countdown-minutes">--</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="countdown-seconds">--</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo break -->
+  <div class="photo-break fade-in">
+    <img src="photos/Karishma and Sanvar-33.jpg" alt="The family together" loading="lazy">
+  </div>
+
+  <!-- SCHEDULE -->
+  <section class="schedule-section section-padding" id="schedule">
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-4.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-1.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-bottom"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
+    <div class="container">
+      <p class="section-subtitle fade-in">Three Days of Celebration</p>
+      <h2 class="section-title fade-in">Schedule of Events</h2>
+      <div class="ornament-line fade-in"><span>&#10043;</span></div>
+
+      <div class="schedule-grid fade-in">
+
+        <!-- DAY 1 -->
+        <div class="schedule-card">
+          <p class="schedule-card-label">Day One</p>
+          <h3 class="schedule-card-title">Arrival &amp; Welcome</h3>
+          <p class="schedule-card-date">Saturday, April 18</p>
+          <div class="schedule-card-line"></div>
+          <div class="schedule-card-events">
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">Afternoon</p>
+              <p class="schedule-card-name">Guests Arrive</p>
+            </div>
+            <div class="schedule-card-dot"></div>
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">5:00 PM</p>
+              <p class="schedule-card-name">Ganga Aarti</p>
+            </div>
+            <div class="schedule-card-dot"></div>
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">7:00 PM</p>
+              <p class="schedule-card-name">Welcome Dinner</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="schedule-card">
+          <p class="schedule-card-label">Day Two</p>
+          <h3 class="schedule-card-title">The Wedding</h3>
+          <p class="schedule-card-date">Sunday, April 19</p>
+          <div class="schedule-card-line"></div>
+          <div class="schedule-card-events">
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">9:00 AM</p>
+              <p class="schedule-card-name">Anand Karaj</p>
+            </div>
+            <div class="schedule-card-dot"></div>
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">5:00 PM</p>
+              <p class="schedule-card-name">Pheras</p>
+            </div>
+            <div class="schedule-card-dot"></div>
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">7:30 PM</p>
+              <p class="schedule-card-name">Let's Celebrate!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="schedule-card schedule-card--centered">
+          <p class="schedule-card-label">Day Three</p>
+          <h3 class="schedule-card-title">Farewell</h3>
+          <p class="schedule-card-date">Monday, April 20</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Photo break -->
+  <div class="photo-break fade-in" style="max-height: 600px; height: 55vh;">
+    <img src="photos/all pooja.jpg" alt="Pooja ceremony" loading="lazy" style="object-position: center 30%;">
+  </div>
+
+  <!-- VENUE / STAY -->
+  <section class="venue-section section-padding" id="venue">
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
+    <div class="container">
+      <p class="section-subtitle fade-in">Where We'll Be Staying</p>
+      <h2 class="section-title fade-in">The Venue</h2>
+      <div class="ornament-line fade-in"><span>&#10043;</span></div>
+
+      <div class="venue-content fade-in">
+        <p class="venue-name">Anand Kashi</p>
+        <p>All wedding events and accommodation will be hosted at Anand Kashi in Rishikesh &mdash; a serene riverside retreat surrounded by the beauty of the Himalayas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFT MESSAGE -->
+  <section class="gift-section section-padding">
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-4.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="container fade-in">
+      <div class="ornament-line"><span>&#10043;</span></div>
+      <p class="gift-message">Your presence at our wedding is the greatest gift of all</p>
+      <div class="ornament-line"><span>&#10043;</span></div>
+    </div>
+  </section>
+
+  <!-- Photo break -->
+  <div class="photo-break fade-in" style="max-height: 600px; height: 55vh;">
+    <img src="photos/Karishma and Sanvar-07.jpg" alt="Sanvar and Karishma" loading="lazy" style="object-position: center 55%;">
+  </div>
+
+  <!-- RSVP -->
+  <section class="rsvp-section section-padding" id="rsvp">
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
+    <div class="container">
+      <p class="section-subtitle fade-in">We Hope You Can Make It</p>
+      <h2 class="section-title fade-in">RSVP</h2>
+      <div class="ornament-line fade-in"><span>&#10043;</span></div>
+
+      <div class="rsvp-content fade-in">
+        <p>Please let us know if you'll be joining us by <strong style="color:var(--gold-light)">March 1, 2026</strong></p>
+        <a href="#" class="btn">RSVP Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-names">Sanvar &amp; Karishma</p>
+    <p class="footer-note">Made with <span>&#9829;</span> love</p>
+    <p class="footer-families">The Oberois &amp; Galanis</p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var WEDDING_DATE = new Date('2026-04-18T15:00:00');
+      var daysEl = document.getElementById('countdown-days');
+      var hoursEl = document.getElementById('countdown-hours');
+      var minutesEl = document.getElementById('countdown-minutes');
+      var secondsEl = document.getElementById('countdown-seconds');
+
+      function updateCountdown() {
+        var diff = WEDDING_DATE - new Date();
+        if (diff <= 0) { daysEl.textContent = '0'; hoursEl.textContent = '0'; minutesEl.textContent = '0'; secondsEl.textContent = '0'; return; }
+        daysEl.textContent = Math.floor(diff / 86400000);
+        hoursEl.textContent = Math.floor((diff % 86400000) / 3600000);
+        minutesEl.textContent = Math.floor((diff % 3600000) / 60000);
+        secondsEl.textContent = Math.floor((diff % 60000) / 1000);
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      var fadeEls = document.querySelectorAll('.fade-in');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        fadeEls.forEach(function (el) { obs.observe(el); });
+      } else {
+        fadeEls.forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      var header = document.getElementById('header');
+      window.addEventListener('scroll', function () { header.classList.toggle('scrolled', window.scrollY > 50); });
+
+      var navToggle = document.getElementById('navToggle');
+      var headerNav = document.getElementById('headerNav');
+      navToggle.addEventListener('click', function () { navToggle.classList.toggle('active'); headerNav.classList.toggle('open'); });
+      headerNav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { navToggle.classList.remove('active'); headerNav.classList.remove('open'); }); });
+
+      // ==========================
+      // Floating Marigold Petals
+      // ==========================
+      var canvas = document.getElementById('marigoldCanvas');
+      var isMobile = window.innerWidth < 600;
+      var spawnInterval = isMobile ? 3000 : 1400;
+
+      // SVG marigold flower shapes in yellow and orange
+      var marigolds = [
+        // Small round marigold — deep orange
+        '<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle cx="14" cy="14" r="4" fill="#e8932f"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#e87d1e" transform="rotate(0 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#f09030" transform="rotate(45 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#e87d1e" transform="rotate(90 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#f09030" transform="rotate(135 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#e87d1e" transform="rotate(180 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#f09030" transform="rotate(225 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#e87d1e" transform="rotate(270 14 14)"/>' +
+          '<ellipse cx="14" cy="5" rx="3.5" ry="5" fill="#f09030" transform="rotate(315 14 14)"/>' +
+          '<circle cx="14" cy="14" r="3" fill="#d4721a"/>' +
+        '</svg>',
+        // Medium marigold — golden yellow
+        '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle cx="16" cy="16" r="5" fill="#e8b832"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#f0c040" transform="rotate(0 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#edb020" transform="rotate(40 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#f0c040" transform="rotate(80 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#edb020" transform="rotate(120 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#f0c040" transform="rotate(160 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#edb020" transform="rotate(200 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#f0c040" transform="rotate(240 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#edb020" transform="rotate(280 16 16)"/>' +
+          '<ellipse cx="16" cy="5" rx="4" ry="6" fill="#f0c040" transform="rotate(320 16 16)"/>' +
+          '<circle cx="16" cy="16" r="3.5" fill="#d4a010"/>' +
+        '</svg>',
+        // Tiny petal — warm orange
+        '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<ellipse cx="9" cy="9" rx="5" ry="8" fill="#e8873a" opacity="0.9" />' +
+        '</svg>',
+        // Tiny petal — sunny yellow
+        '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<ellipse cx="8" cy="8" rx="4.5" ry="7" fill="#f0be30" opacity="0.85" />' +
+        '</svg>',
+        // Small dense marigold — marigold orange
+        '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle cx="12" cy="12" r="3.5" fill="#d4781a"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#e8932f" transform="rotate(0 12 12)"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#f0a040" transform="rotate(60 12 12)"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#e8932f" transform="rotate(120 12 12)"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#f0a040" transform="rotate(180 12 12)"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#e8932f" transform="rotate(240 12 12)"/>' +
+          '<ellipse cx="12" cy="4.5" rx="3" ry="4.5" fill="#f0a040" transform="rotate(300 12 12)"/>' +
+          '<circle cx="12" cy="12" r="2.5" fill="#c46818"/>' +
+        '</svg>',
+        // Medium marigold — warm saffron
+        '<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+          '<circle cx="15" cy="15" r="4.5" fill="#d48820"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#e8a030" transform="rotate(0 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#d49020" transform="rotate(51.4 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#e8a030" transform="rotate(102.8 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#d49020" transform="rotate(154.3 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#e8a030" transform="rotate(205.7 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#d49020" transform="rotate(257.1 15 15)"/>' +
+          '<ellipse cx="15" cy="5" rx="3.5" ry="5.5" fill="#e8a030" transform="rotate(308.6 15 15)"/>' +
+          '<circle cx="15" cy="15" r="3" fill="#c47818"/>' +
+        '</svg>'
+      ];
+
+      function spawnMarigold() {
+        var el = document.createElement('div');
+        el.className = 'marigold';
+        el.innerHTML = marigolds[Math.floor(Math.random() * marigolds.length)];
+
+        var left = Math.random() * 100;
+        var duration = 8 + Math.random() * 10;
+        var rotation = (Math.random() - 0.5) * 720;
+        var drift = (Math.random() - 0.5) * 160;
+        var scale = 0.6 + Math.random() * 0.7;
+
+        el.style.left = left + '%';
+        el.style.setProperty('--rot', rotation + 'deg');
+        el.style.setProperty('--drift', drift + 'px');
+        el.style.animationDuration = duration + 's';
+        el.style.transform = 'scale(' + scale + ')';
+        el.style.opacity = '0';
+
+        canvas.appendChild(el);
+
+        setTimeout(function () {
+          if (el.parentNode) el.parentNode.removeChild(el);
+        }, duration * 1000 + 100);
+      }
+
+      // Spawn initial burst
+      for (var i = 0; i < (isMobile ? 3 : 6); i++) {
+        setTimeout(spawnMarigold, i * 400);
+      }
+
+      // Continuous gentle stream
+      setInterval(spawnMarigold, spawnInterval);
+
+    })();
+  </script>
+
+</body>
+</html>
