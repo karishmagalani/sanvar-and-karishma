@@ -1,52 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <!-- Mountains -->
-  <path d="M0 140 L60 70 L100 110 L150 50 L200 100 L240 65 L290 95 L330 45 L380 90 L420 60 L470 85 L510 55 L560 80 L600 50 L600 140" stroke="#a3b396" stroke-width="1.2" fill="none" opacity="0.3"/>
-  <path d="M0 140 L80 90 L130 120 L180 75 L230 110 L280 80 L340 105 L390 70 L440 100 L500 75 L550 95 L600 70 L600 140" stroke="#a3b396" stroke-width="1.5" fill="none" opacity="0.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 260" fill="none" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- Treeline -->
-  <path d="M20 140 Q25 125 30 140 Q35 120 40 140 Q45 128 50 140" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.5"/>
-  <path d="M80 138 Q85 118 90 138 Q95 122 100 138" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.4"/>
-  <path d="M480 138 Q485 120 490 138 Q495 124 500 138 Q505 118 510 138" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.5"/>
-  <path d="M540 140 Q545 125 550 140 Q555 128 560 140" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.4"/>
+  <!-- Far mountain range — misty, faint -->
+  <path d="M0 130 Q30 85 70 100 Q100 60 140 90 Q170 45 210 80 Q240 55 280 70 Q310 35 350 65 Q380 40 420 60 Q460 30 500 58 Q530 42 570 65 Q600 48 640 70 Q670 55 700 80 L700 130"
+        stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <!-- Snow caps on far peaks -->
+  <path d="M168 48 Q170 45 172 48" stroke="#dac9a0" stroke-width="0.6" fill="none" opacity="0.2"/>
+  <path d="M308 38 Q310 35 312 38" stroke="#dac9a0" stroke-width="0.6" fill="none" opacity="0.2"/>
+  <path d="M458 33 Q460 30 462 33" stroke="#dac9a0" stroke-width="0.6" fill="none" opacity="0.2"/>
 
-  <!-- Temple/building silhouette -->
-  <path d="M270 140 L270 118 L275 108 L280 118 L280 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.5"/>
-  <path d="M260 140 L260 125 L265 125 L265 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
-  <path d="M285 140 L285 128 L292 128 L292 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
+  <!-- Mid mountain range -->
+  <path d="M0 140 Q50 105 90 118 Q120 85 165 108 Q195 72 240 100 Q270 80 310 95 Q345 68 390 92 Q425 75 460 90 Q495 70 540 88 Q575 78 610 95 Q645 82 700 100 L700 140"
+        stroke="#a3b396" stroke-width="1" fill="none" opacity="0.35"/>
 
-  <!-- River bank -->
-  <path d="M0 145 Q100 142 200 148 Q300 152 400 146 Q500 142 600 148" stroke="#a3b396" stroke-width="1.5" fill="none" opacity="0.6"/>
+  <!-- Near mountain range — more defined -->
+  <path d="M0 148 Q60 112 110 130 Q145 100 195 122 Q225 95 270 115 Q305 98 345 112 Q385 92 430 110 Q465 100 510 115 Q545 105 585 118 Q625 108 700 120 L700 148"
+        stroke="#7a8a6e" stroke-width="1.3" fill="none" opacity="0.45"/>
 
-  <!-- River water lines -->
-  <path d="M30 158 Q60 155 90 158" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
-  <path d="M150 162 Q190 159 230 163" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.25"/>
-  <path d="M280 157 Q320 154 360 158" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
-  <path d="M400 164 Q440 160 480 164" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.25"/>
-  <path d="M100 170 Q150 167 200 171" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
-  <path d="M340 172 Q390 168 440 172" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
-  <path d="M500 168 Q540 165 580 169" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <!-- Forested hillside — left -->
+  <path d="M0 148 Q8 132 16 148 Q22 128 30 148 Q36 134 44 148 Q50 126 58 148 Q64 132 72 148 Q78 138 86 148"
+        stroke="#7a8a6e" stroke-width="1.1" fill="none" opacity="0.4"/>
 
-  <!-- Ghat steps -->
-  <path d="M220 148 L220 155 L235 155 L235 160 L250 160 L250 165 L265 165" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
-  <path d="M330 146 L330 153 L345 153 L345 158 L355 158" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.35"/>
+  <!-- Forested hillside — right -->
+  <path d="M580 145 Q586 128 594 145 Q600 132 608 145 Q614 126 622 145 Q628 134 636 145 Q642 128 650 145 Q656 136 664 145 Q670 130 678 145 Q684 138 692 145 L700 145"
+        stroke="#7a8a6e" stroke-width="1.1" fill="none" opacity="0.4"/>
 
-  <!-- Small diyas/lights on the river -->
-  <circle cx="180" cy="160" r="2" fill="#c4a265" opacity="0.4"/>
-  <circle cx="310" cy="158" r="2" fill="#c4a265" opacity="0.5"/>
-  <circle cx="420" cy="162" r="2" fill="#c4a265" opacity="0.35"/>
-  <circle cx="260" cy="168" r="1.5" fill="#c4a265" opacity="0.3"/>
-  <circle cx="470" cy="166" r="1.5" fill="#c4a265" opacity="0.3"/>
+  <!-- Temple cluster — left bank (Rishikesh style) -->
+  <!-- Main shikhara -->
+  <path d="M140 148 L140 120 Q143 108 146 120 L146 148" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.5"/>
+  <circle cx="143" cy="106" r="2" stroke="#c4a265" stroke-width="0.6" fill="none" opacity="0.4"/>
+  <!-- Side structure -->
+  <path d="M128 148 L128 132 L136 132 L136 148" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <path d="M128 132 Q132 126 136 132" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.4"/>
+  <!-- Smaller shrine -->
+  <path d="M150 148 L150 135 Q153 128 156 135 L156 148" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.35"/>
 
-  <!-- Birds -->
-  <path d="M120 40 Q125 35 130 40 Q135 35 140 40" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.35"/>
-  <path d="M400 30 Q404 26 408 30 Q412 26 416 30" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
-  <path d="M450 45 Q453 42 456 45 Q459 42 462 45" stroke="#a3b396" stroke-width="0.7" fill="none" opacity="0.25"/>
+  <!-- Temple cluster — right bank -->
+  <!-- Multi-tiered temple -->
+  <path d="M510 148 L510 115 Q514 105 518 115 L518 148" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M505 148 L505 128 L523 128 L523 148" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <circle cx="514" cy="103" r="2" stroke="#c4a265" stroke-width="0.6" fill="none" opacity="0.4"/>
+  <!-- Adjacent building -->
+  <path d="M526 148 L526 132 L536 132 L536 148" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.35"/>
 
-  <!-- Sun -->
-  <circle cx="500" cy="30" r="12" stroke="#c4a265" stroke-width="0.8" fill="none" opacity="0.3"/>
-  <line x1="500" y1="14" x2="500" y2="8" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
-  <line x1="516" y1="30" x2="522" y2="30" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
-  <line x1="484" y1="30" x2="478" y2="30" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
-  <line x1="511" y1="19" x2="515" y2="15" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
-  <line x1="489" y1="19" x2="485" y2="15" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+  <!-- ===== Suspension bridge (Lakshman Jhula style) ===== -->
+  <!-- Towers -->
+  <path d="M245 148 L245 100" stroke="#a3b396" stroke-width="1.4" fill="none" opacity="0.55"/>
+  <path d="M445 148 L445 100" stroke="#a3b396" stroke-width="1.4" fill="none" opacity="0.55"/>
+  <!-- Tower caps -->
+  <path d="M241 100 L249 100" stroke="#a3b396" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <path d="M441 100 L449 100" stroke="#a3b396" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <!-- Main cables — elegant catenary -->
+  <path d="M245 100 Q295 85 345 80 Q395 85 445 100" stroke="#a3b396" stroke-width="1.1" fill="none" opacity="0.5"/>
+  <path d="M245 100 Q295 90 345 86 Q395 90 445 100" stroke="#a3b396" stroke-width="0.7" fill="none" opacity="0.3"/>
+  <!-- Bridge deck -->
+  <path d="M245 138 Q295 142 345 143 Q395 142 445 138" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.45"/>
+  <!-- Vertical suspenders -->
+  <line x1="270" y1="83" x2="270" y2="141" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="295" y1="81" x2="295" y2="142" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="320" y1="80" x2="320" y2="143" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="345" y1="80" x2="345" y2="143" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="370" y1="80" x2="370" y2="143" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="395" y1="81" x2="395" y2="142" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+  <line x1="420" y1="83" x2="420" y2="141" stroke="#a3b396" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- ===== River banks ===== -->
+  <path d="M0 155 Q80 150 160 154 Q200 157 245 155" stroke="#7a8a6e" stroke-width="1.3" fill="none" opacity="0.5"/>
+  <path d="M445 155 Q500 152 560 154 Q620 150 700 155" stroke="#7a8a6e" stroke-width="1.3" fill="none" opacity="0.5"/>
+
+  <!-- ===== Ghat steps — left bank ===== -->
+  <path d="M170 155 L170 162 L185 162 L185 168 L200 168 L200 174 L218 174 L218 180 L240 180"
+        stroke="#a3b396" stroke-width="0.9" fill="none" opacity="0.4"/>
+  <!-- Ghat steps — right bank -->
+  <path d="M460 155 L460 162 L475 162 L475 168 L488 168 L488 174 L500 174"
+        stroke="#a3b396" stroke-width="0.9" fill="none" opacity="0.35"/>
+
+  <!-- ===== The Ganga — flowing water ===== -->
+  <!-- Primary flow lines -->
+  <path d="M0 172 Q50 168 100 173 Q150 177 200 174 Q250 170 300 175 Q350 179 400 174 Q450 170 500 175 Q550 178 600 173 Q650 170 700 174"
+        stroke="#a3b396" stroke-width="1" fill="none" opacity="0.35"/>
+  <path d="M0 182 Q60 178 120 183 Q180 187 240 182 Q300 178 360 183 Q420 187 480 182 Q540 178 600 183 Q660 186 700 182"
+        stroke="#a3b396" stroke-width="0.9" fill="none" opacity="0.28"/>
+  <path d="M0 192 Q70 188 140 192 Q210 196 280 192 Q350 188 420 193 Q490 196 560 192 Q630 189 700 193"
+        stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.22"/>
+
+  <!-- Gentle ripple details -->
+  <path d="M60 176 Q80 173 100 176" stroke="#a3b396" stroke-width="0.6" fill="none" opacity="0.2"/>
+  <path d="M200 180 Q225 177 250 180" stroke="#a3b396" stroke-width="0.6" fill="none" opacity="0.18"/>
+  <path d="M330 177 Q355 174 380 177" stroke="#a3b396" stroke-width="0.6" fill="none" opacity="0.2"/>
+  <path d="M480 180 Q505 177 530 180" stroke="#a3b396" stroke-width="0.6" fill="none" opacity="0.18"/>
+  <path d="M140 188 Q165 185 190 188" stroke="#a3b396" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M400 190 Q430 187 460 190" stroke="#a3b396" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <path d="M560 186 Q585 183 610 186" stroke="#a3b396" stroke-width="0.5" fill="none" opacity="0.16"/>
+  <path d="M280 196 Q310 193 340 196" stroke="#a3b396" stroke-width="0.4" fill="none" opacity="0.12"/>
+
+  <!-- ===== Floating diyas ===== -->
+  <!-- Diya 1 -->
+  <ellipse cx="160" cy="176" rx="4" ry="1.5" stroke="#c4a265" stroke-width="0.6" fill="none" opacity="0.45"/>
+  <path d="M160 174 Q160 171 160 170" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.35"/>
+  <circle cx="160" cy="169" r="1" fill="#c4a265" opacity="0.5"/>
+  <!-- Diya 2 -->
+  <ellipse cx="290" cy="178" rx="4" ry="1.5" stroke="#c4a265" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <path d="M290 176 Q290 173 290 172" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <circle cx="290" cy="171" r="1.2" fill="#c4a265" opacity="0.55"/>
+  <!-- Diya 3 -->
+  <ellipse cx="410" cy="177" rx="3.5" ry="1.3" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.4"/>
+  <path d="M410 175 Q410 172 410 171" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.3"/>
+  <circle cx="410" cy="170" r="1" fill="#c4a265" opacity="0.45"/>
+  <!-- Diya 4 -->
+  <ellipse cx="540" cy="179" rx="3.5" ry="1.3" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.35"/>
+  <path d="M540 177 Q540 174 540 173" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.28"/>
+  <circle cx="540" cy="172" r="0.9" fill="#c4a265" opacity="0.4"/>
+  <!-- Diya 5 — distant -->
+  <ellipse cx="220" cy="185" rx="3" ry="1" stroke="#c4a265" stroke-width="0.4" fill="none" opacity="0.25"/>
+  <circle cx="220" cy="183" r="0.8" fill="#c4a265" opacity="0.3"/>
+  <!-- Diya 6 — distant -->
+  <ellipse cx="470" cy="186" rx="3" ry="1" stroke="#c4a265" stroke-width="0.4" fill="none" opacity="0.25"/>
+  <circle cx="470" cy="184" r="0.8" fill="#c4a265" opacity="0.3"/>
+  <!-- Diya 7 — far -->
+  <circle cx="350" cy="190" r="0.7" fill="#c4a265" opacity="0.22"/>
+
+  <!-- Gentle glow halos around brighter diyas -->
+  <circle cx="290" cy="171" r="4" fill="#c4a265" opacity="0.06"/>
+  <circle cx="160" cy="169" r="3.5" fill="#c4a265" opacity="0.05"/>
+  <circle cx="410" cy="170" r="3" fill="#c4a265" opacity="0.05"/>
+
+  <!-- ===== Birds in flight ===== -->
+  <path d="M90 50 Q95 44 100 50 Q105 44 110 50" stroke="#a3b396" stroke-width="0.7" fill="none" opacity="0.3"/>
+  <path d="M115 42 Q119 37 123 42 Q127 37 131 42" stroke="#a3b396" stroke-width="0.6" fill="none" opacity="0.25"/>
+  <path d="M530 38 Q534 33 538 38 Q542 33 546 38" stroke="#a3b396" stroke-width="0.7" fill="none" opacity="0.28"/>
+  <path d="M560 48 Q563 44 566 48 Q569 44 572 48" stroke="#a3b396" stroke-width="0.55" fill="none" opacity="0.2"/>
+
+  <!-- ===== Sun / moon glow ===== -->
+  <circle cx="600" cy="40" r="16" stroke="#c4a265" stroke-width="0.7" fill="none" opacity="0.2"/>
+  <circle cx="600" cy="40" r="10" stroke="#c4a265" stroke-width="0.5" fill="none" opacity="0.15"/>
+  <circle cx="600" cy="40" r="24" stroke="#c4a265" stroke-width="0.3" fill="none" opacity="0.08"/>
+  <!-- Rays -->
+  <line x1="600" y1="20" x2="600" y2="12" stroke="#c4a265" stroke-width="0.5" opacity="0.15"/>
+  <line x1="620" y1="40" x2="628" y2="40" stroke="#c4a265" stroke-width="0.5" opacity="0.15"/>
+  <line x1="580" y1="40" x2="572" y2="40" stroke="#c4a265" stroke-width="0.5" opacity="0.15"/>
+  <line x1="614" y1="26" x2="620" y2="20" stroke="#c4a265" stroke-width="0.4" opacity="0.12"/>
+  <line x1="586" y1="26" x2="580" y2="20" stroke="#c4a265" stroke-width="0.4" opacity="0.12"/>
+  <line x1="614" y1="54" x2="620" y2="60" stroke="#c4a265" stroke-width="0.4" opacity="0.1"/>
+  <line x1="586" y1="54" x2="580" y2="60" stroke="#c4a265" stroke-width="0.4" opacity="0.1"/>
+
+  <!-- Soft bottom fade line -->
+  <path d="M0 210 Q175 205 350 210 Q525 215 700 208" stroke="#a3b396" stroke-width="0.4" fill="none" opacity="0.08"/>
+
 </svg>
