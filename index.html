@@ -3,7 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanvar & Karishma — Wedding Celebration</title>
+  <title>Sanvar & Karishma | Wedding Celebration</title>
+  <meta name="description" content="Sanvar & Karishma invite you to celebrate their wedding in Rishikesh, India. April 18 to 20, 2026.">
+
+  <!-- Open Graph (WhatsApp, iMessage, Facebook, LinkedIn etc.) -->
+  <meta property="og:title" content="Sanvar & Karishma | Save the Date">
+  <meta property="og:description" content="You're invited to celebrate our wedding in Rishikesh, India. April 18 to 20, 2026 &#10043;">
+  <meta property="og:image" content="https://kgso.in/photos/Karishma%20and%20Sanvar-07.jpg">
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:url" content="https://kgso.in">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sanvar & Karishma | Save the Date">
+  <meta name="twitter:description" content="You're invited to celebrate our wedding in Rishikesh, India. April 18 to 20, 2026 &#10043;">
+  <meta name="twitter:image" content="https://kgso.in/photos/Karishma%20and%20Sanvar-07.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -540,6 +557,41 @@
     }
     .venue-section .ornament-line span { color: var(--sage-soft); }
 
+    .venue-sketch {
+      max-width: 480px;
+      margin: 2rem auto 0;
+      opacity: 0.7;
+    }
+    .venue-sketch img {
+      width: 100%;
+      height: auto;
+    }
+
+    .venue-weather-note {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(243, 237, 228, 0.7);
+      text-align: center;
+      max-width: 440px;
+      margin: 2rem auto 0;
+      line-height: 1.8;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(163, 179, 150, 0.2);
+    }
+    .venue-weather-note span {
+      display: block;
+      font-family: var(--font-label);
+      font-size: 0.55rem;
+      font-weight: 400;
+      font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--sage-soft);
+      margin-bottom: 0.5rem;
+    }
+
     .venue-content {
       max-width: 560px;
       margin: 0 auto;
@@ -618,16 +670,16 @@
 
     .wardrobe-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
-      max-width: 960px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1060px;
       margin: 0 auto;
     }
 
     .wardrobe-card {
       background: var(--warm-white);
       border: 1px solid var(--gold-pale);
-      padding: 2rem 1.5rem;
+      padding: 2.2rem 1.3rem 2rem;
       text-align: center;
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -681,11 +733,38 @@
       border-top: 1px solid var(--gold-pale);
     }
 
-    @media (max-width: 768px) {
+    .wardrobe-swatches {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin: 1rem 0 0.2rem;
+    }
+    .wardrobe-swatch {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    @media (max-width: 900px) {
+      .wardrobe-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 500px;
+        gap: 1rem;
+      }
+      .wardrobe-grid .wardrobe-card:last-child {
+        grid-column: span 2;
+        max-width: 245px;
+        margin: 0 auto;
+      }
+    }
+    @media (max-width: 520px) {
       .wardrobe-grid {
         grid-template-columns: 1fr;
-        max-width: 420px;
-        gap: 1rem;
+        max-width: 340px;
+      }
+      .wardrobe-grid .wardrobe-card:last-child {
+        grid-column: span 1;
+        max-width: none;
       }
     }
 
@@ -844,6 +923,88 @@
     }
 
     /* ========================================
+       MARIGOLD GARLAND STRIP
+       ======================================== */
+    .marigold-garland {
+      width: 100%;
+      padding: 1rem 0;
+      background: linear-gradient(180deg, var(--ivory) 0%, var(--cream) 50%, var(--ivory) 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      overflow: hidden;
+      position: relative;
+    }
+    .marigold-garland::before,
+    .marigold-garland::after {
+      content: ''; position: absolute;
+      left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+    .marigold-garland::before { top: 0; }
+    .marigold-garland::after { bottom: 0; }
+    .marigold-garland img {
+      width: 48px; height: 48px;
+      object-fit: contain;
+      opacity: 0.7;
+    }
+    .marigold-garland img:nth-child(even) { transform: rotate(15deg); }
+    .marigold-garland img:nth-child(odd) { transform: rotate(-10deg); }
+    .marigold-garland-string {
+      width: 30px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .marigold-garland img { width: 34px; height: 34px; }
+      .marigold-garland-string { width: 15px; }
+    }
+
+    /* ========================================
+       HERO MARIGOLD DECORATIONS
+       ======================================== */
+    .hero .marigold-decor {
+      z-index: 6;
+    }
+    .hero .marigold-decor.pos-bl {
+      bottom: 50px; left: 35px;
+      width: 100px; height: 100px;
+      transform: rotate(-20deg);
+      opacity: 0.3;
+    }
+    .hero .marigold-decor.pos-br {
+      bottom: 50px; right: 35px;
+      width: 90px; height: 90px;
+      transform: rotate(25deg) scaleX(-1);
+      opacity: 0.3;
+    }
+    .hero .marigold-decor.pos-tl {
+      top: 70px; left: 30px;
+      width: 80px; height: 80px;
+      transform: rotate(15deg);
+      opacity: 0.25;
+    }
+    .hero .marigold-decor.pos-tr {
+      top: 70px; right: 30px;
+      width: 85px; height: 85px;
+      transform: rotate(-18deg) scaleX(-1);
+      opacity: 0.25;
+    }
+
+    @media (max-width: 600px) {
+      .hero .marigold-decor.pos-bl,
+      .hero .marigold-decor.pos-br { width: 60px; height: 60px; bottom: 25px; opacity: 0.2; }
+      .hero .marigold-decor.pos-tl,
+      .hero .marigold-decor.pos-tr { width: 50px; height: 50px; top: 45px; opacity: 0.18; }
+      .hero .marigold-decor.pos-bl { left: 15px; }
+      .hero .marigold-decor.pos-br { right: 15px; }
+      .hero .marigold-decor.pos-tl { left: 14px; }
+      .hero .marigold-decor.pos-tr { right: 14px; }
+    }
+
+    /* ========================================
        STATIONARY MARIGOLD DECORATIONS
        ======================================== */
     .marigold-decor {
@@ -973,13 +1134,46 @@
       transform: rotate(22deg) scaleX(-1);
       opacity: 0.3;
     }
+    .wardrobe-section .marigold-decor.pos-mid-left {
+      bottom: 40%; left: -45px;
+      width: 100px; height: 100px;
+      transform: rotate(30deg);
+      opacity: 0.2;
+    }
+    .wardrobe-section .marigold-decor.pos-mid-right {
+      top: 35%; right: -40px;
+      width: 110px; height: 110px;
+      transform: rotate(-25deg) scaleX(-1);
+      opacity: 0.2;
+    }
 
-    /* Countdown section — add a left marigold too */
+    /* Countdown section — extra positions */
     .countdown-section .marigold-decor.pos-left {
       bottom: -20px; left: -25px;
       width: 145px; height: 145px;
       transform: rotate(-25deg) scaleX(-1);
       opacity: 0.35;
+    }
+    .countdown-section .marigold-decor.pos-center {
+      top: 50%; left: 5%;
+      width: 90px; height: 90px;
+      transform: translateY(-50%) rotate(40deg);
+      opacity: 0.2;
+    }
+
+    /* Footer marigolds */
+    .site-footer { position: relative; overflow: hidden; }
+    .site-footer .marigold-decor.pos-left {
+      bottom: -15px; left: -20px;
+      width: 100px; height: 100px;
+      transform: rotate(-20deg);
+      opacity: 0.15;
+    }
+    .site-footer .marigold-decor.pos-right {
+      bottom: -15px; right: -20px;
+      width: 90px; height: 90px;
+      transform: rotate(25deg) scaleX(-1);
+      opacity: 0.15;
     }
 
     @media (max-width: 768px) {
@@ -995,6 +1189,8 @@
       .schedule-section .marigold-decor.pos-bottom { width: 80px; height: 80px; }
       .venue-section .marigold-decor { width: 90px !important; height: 90px !important; }
       .wardrobe-section .marigold-decor { width: 90px !important; height: 90px !important; }
+      .wardrobe-section .marigold-decor.pos-mid-left,
+      .wardrobe-section .marigold-decor.pos-mid-right { display: none; }
       .rsvp-section .marigold-decor { width: 85px !important; height: 85px !important; }
     }
   </style>
@@ -1027,6 +1223,10 @@
     <div class="hero-corner hero-corner--tr"></div>
     <div class="hero-corner hero-corner--bl"></div>
     <div class="hero-corner hero-corner--br"></div>
+    <div class="marigold-decor pos-bl"><img src="photos/marigolds/marigold-orange.svg" alt=""></div>
+    <div class="marigold-decor pos-br"><img src="photos/marigolds/marigold-yellow.svg" alt=""></div>
+    <div class="marigold-decor pos-tl"><img src="photos/marigolds/marigold-small.svg" alt=""></div>
+    <div class="marigold-decor pos-tr"><img src="photos/marigolds/marigold-small.svg" alt=""></div>
 
     <div class="hero-content">
       <p class="hero-families">The Oberois &amp; Galanis Welcome You</p>
@@ -1043,7 +1243,7 @@
       </div>
 
       <p class="hero-location">Rishikesh, India</p>
-      <p class="hero-date">April 18 &mdash; 20, 2026</p>
+      <p class="hero-date">April 18 to 20, 2026</p>
 
       <div class="hero-scroll">
         <a href="#countdown"><span class="arrow"></span></a>
@@ -1051,11 +1251,36 @@
     </div>
   </section>
 
+  <!-- Marigold garland -->
+  <div class="marigold-garland" aria-hidden="true">
+    <img src="photos/marigolds/marigold-orange.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-yellow.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-small.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-orange.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-yellow.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-small.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-orange.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-yellow.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-small.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-orange.svg" alt="">
+    <span class="marigold-garland-string"></span>
+    <img src="photos/marigolds/marigold-yellow.svg" alt="">
+  </div>
+
   <!-- COUNTDOWN -->
   <section class="countdown-section section-padding" id="countdown">
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-1.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-center"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-center"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
     <div class="container fade-in">
       <p class="section-subtitle">Counting Down To</p>
       <h2 class="section-title">The Celebration</h2>
@@ -1089,11 +1314,11 @@
 
   <!-- SCHEDULE -->
   <section class="schedule-section section-padding" id="schedule">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-4.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-1.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-bottom"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-bottom"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
     <div class="container">
       <p class="section-subtitle fade-in">Three Days of Celebration</p>
       <h2 class="section-title fade-in">Schedule of Events</h2>
@@ -1168,8 +1393,8 @@
 
   <!-- VENUE / STAY -->
   <section class="venue-section section-padding" id="venue">
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
     <div class="container">
       <p class="section-subtitle fade-in">Where We'll Be Staying</p>
       <h2 class="section-title fade-in">The Venue</h2>
@@ -1177,7 +1402,7 @@
 
       <div class="venue-content fade-in">
         <p class="venue-name">Anand Kashi</p>
-        <p>All wedding events and accommodation will be hosted at Anand Kashi in Rishikesh &mdash; a serene riverside retreat surrounded by the beauty of the Himalayas</p>
+        <p>All wedding events and accommodation will be hosted at Anand Kashi in Rishikesh, a serene riverside retreat surrounded by the beauty of the Himalayas</p>
         <div class="weather-badge">
           <span class="weather-icon">&#9728;&#65039;</span>
           <div>
@@ -1186,42 +1411,95 @@
           </div>
           <span style="font-family:var(--font-body); font-size:0.95rem; color:rgba(243,237,228,0.65); margin-left:0.3rem; font-style:italic;">sunny &amp; warm</span>
         </div>
+
+        <div class="venue-sketch"><img src="photos/riverside-sketch.svg" alt="Riverside sketch"></div>
+
+        <p class="venue-weather-note">
+          <span>A friendly reminder</span>
+          It's going to be a hot one! Pack your sunglasses, sunscreen, and a hat if you have one. Light, breathable clothing is your best friend and stay hydrated throughout the celebrations
+        </p>
       </div>
     </div>
   </section>
 
   <!-- WARDROBE -->
   <section class="wardrobe-section section-padding" id="wardrobe">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-1.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
     <div class="container">
       <p class="section-subtitle fade-in">What to Wear</p>
       <h2 class="section-title fade-in">Wardrobe Guide</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
 
-      <p class="wardrobe-intro fade-in">Rishikesh in April is gloriously sunny &mdash; think light fabrics, breathable fits, and sunglasses at the ready</p>
+      <p class="wardrobe-intro fade-in">Rishikesh in April is gloriously sunny so think light fabrics, breathable fits, and sunglasses at the ready</p>
 
       <div class="wardrobe-grid fade-in">
 
         <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day One &middot; Evening</p>
-          <h3 class="wardrobe-card-event">Ganga Aarti &amp; Welcome Dinner</h3>
-          <p class="wardrobe-card-desc">Smart casuals in soft, flowy fabrics &mdash; think breezy kurtas, linens, and easy silhouettes in warm sunset tones</p>
-          <p class="wardrobe-card-tip">&#9728;&#65039; Light layers for the riverside breeze</p>
+          <p class="wardrobe-card-day">Day One &middot; 5 PM</p>
+          <h3 class="wardrobe-card-event">Ganga Aarti</h3>
+          <p class="wardrobe-card-desc">Smart casuals, breezy kurtas, and easy silhouettes in warm sunset tones</p>
+          <div class="wardrobe-swatches">
+            <span class="wardrobe-swatch" style="background:#e07830;"></span>
+            <span class="wardrobe-swatch" style="background:#d4956a;"></span>
+            <span class="wardrobe-swatch" style="background:#c4a265;"></span>
+            <span class="wardrobe-swatch" style="background:#e8c088;"></span>
+          </div>
+          <p class="wardrobe-card-tip">&#9728;&#65039; Light layers for the riverside</p>
         </div>
 
         <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day Two &middot; Morning</p>
+          <p class="wardrobe-card-day">Day One &middot; 7 PM</p>
+          <h3 class="wardrobe-card-event">Welcome Dinner</h3>
+          <p class="wardrobe-card-desc">Soft pastels like blush, lavender, powder blue, and mint</p>
+          <div class="wardrobe-swatches">
+            <span class="wardrobe-swatch" style="background:#e8b8c0;"></span>
+            <span class="wardrobe-swatch" style="background:#c0b0d8;"></span>
+            <span class="wardrobe-swatch" style="background:#a8c8e0;"></span>
+            <span class="wardrobe-swatch" style="background:#b0d8c0;"></span>
+          </div>
+          <p class="wardrobe-card-tip">&#127800; Keep it light and lovely</p>
+        </div>
+
+        <div class="wardrobe-card">
+          <p class="wardrobe-card-day">Day Two &middot; 9 AM</p>
           <h3 class="wardrobe-card-event">Anand Karaj</h3>
-          <p class="wardrobe-card-desc">Traditional and elegant &mdash; please cover your head as a mark of respect at the Gurudwara</p>
-          <p class="wardrobe-card-tip">&#128524; Scarves &amp; dupattas will be provided</p>
+          <p class="wardrobe-card-desc">Soft, elegant hues like ivory, cream, sage, and other delicate tones</p>
+          <div class="wardrobe-swatches">
+            <span class="wardrobe-swatch" style="background:#f5f0e6;"></span>
+            <span class="wardrobe-swatch" style="background:#e8e0d0;"></span>
+            <span class="wardrobe-swatch" style="background:#b8c8a8;"></span>
+            <span class="wardrobe-swatch" style="background:#d8d0c0;"></span>
+          </div>
+          <p class="wardrobe-card-tip">&#128524; Head coverings will be provided</p>
         </div>
 
         <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day Two &middot; Evening</p>
-          <h3 class="wardrobe-card-event">Pheras &amp; Celebrations</h3>
-          <p class="wardrobe-card-desc">Your finest and most fabulous &mdash; bright colours, bold jewellery, and your best dancing shoes</p>
-          <p class="wardrobe-card-tip">&#128131; Go all out &mdash; the bolder the better!</p>
+          <p class="wardrobe-card-day">Day Two &middot; 5 PM</p>
+          <h3 class="wardrobe-card-event">Pheras</h3>
+          <p class="wardrobe-card-desc">Gold and golden hues, shimmer, shine, and all things gilded</p>
+          <div class="wardrobe-swatches">
+            <span class="wardrobe-swatch" style="background:#c4a265;"></span>
+            <span class="wardrobe-swatch" style="background:#d4b878;"></span>
+            <span class="wardrobe-swatch" style="background:#e8d098;"></span>
+            <span class="wardrobe-swatch" style="background:#a88840;"></span>
+          </div>
+          <p class="wardrobe-card-tip">&#10024; Think radiant and regal</p>
+        </div>
+
+        <div class="wardrobe-card">
+          <p class="wardrobe-card-day">Day Two &middot; 7:30 PM</p>
+          <h3 class="wardrobe-card-event">Let's Celebrate!</h3>
+          <p class="wardrobe-card-desc">Bling, sparkle, and your most fabulous look because this is the night to go all out</p>
+          <div class="wardrobe-swatches">
+            <span class="wardrobe-swatch" style="background:#c42858;"></span>
+            <span class="wardrobe-swatch" style="background:#2828a0;"></span>
+            <span class="wardrobe-swatch" style="background:#e8b020;"></span>
+            <span class="wardrobe-swatch" style="background:#18a068;"></span>
+          </div>
+          <p class="wardrobe-card-tip">&#128131; The bolder the better!</p>
         </div>
 
       </div>
@@ -1230,8 +1508,8 @@
 
   <!-- GIFT MESSAGE -->
   <section class="gift-section section-padding">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-4.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-5.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
     <div class="container fade-in">
       <div class="ornament-line"><span>&#10043;</span></div>
       <p class="gift-message">Your presence at our wedding is the greatest gift of all</p>
@@ -1246,15 +1524,15 @@
 
   <!-- RSVP -->
   <section class="rsvp-section section-padding" id="rsvp">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-2.png" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-3.png" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
     <div class="container">
       <p class="section-subtitle fade-in">We Hope You Can Make It</p>
       <h2 class="section-title fade-in">RSVP</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
 
       <div class="rsvp-content fade-in">
-        <p>Please let us know if you'll be joining us by <strong style="color:var(--gold-light)">March 1, 2026</strong></p>
+        <p>Please let us know if you're able to join us</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFChiyFOk2CUqZVNCwQOuZSojgJKjxYsJw2RuOeALSXG8HKg/viewform?usp=header" target="_blank" rel="noopener" class="btn">RSVP Now</a>
       </div>
     </div>
@@ -1262,6 +1540,8 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-orange.svg" alt=""></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt=""></div>
     <p class="footer-names">Sanvar &amp; Karishma</p>
     <p class="footer-note">Made with <span>&#9829;</span> love</p>
     <p class="footer-families">The Oberois &amp; Galanis</p>

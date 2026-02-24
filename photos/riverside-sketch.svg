@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Mountains -->
+  <path d="M0 140 L60 70 L100 110 L150 50 L200 100 L240 65 L290 95 L330 45 L380 90 L420 60 L470 85 L510 55 L560 80 L600 50 L600 140" stroke="#a3b396" stroke-width="1.2" fill="none" opacity="0.3"/>
+  <path d="M0 140 L80 90 L130 120 L180 75 L230 110 L280 80 L340 105 L390 70 L440 100 L500 75 L550 95 L600 70 L600 140" stroke="#a3b396" stroke-width="1.5" fill="none" opacity="0.5"/>
+
+  <!-- Treeline -->
+  <path d="M20 140 Q25 125 30 140 Q35 120 40 140 Q45 128 50 140" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <path d="M80 138 Q85 118 90 138 Q95 122 100 138" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.4"/>
+  <path d="M480 138 Q485 120 490 138 Q495 124 500 138 Q505 118 510 138" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.5"/>
+  <path d="M540 140 Q545 125 550 140 Q555 128 560 140" stroke="#7a8a6e" stroke-width="1.2" fill="none" opacity="0.4"/>
+
+  <!-- Temple/building silhouette -->
+  <path d="M270 140 L270 118 L275 108 L280 118 L280 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.5"/>
+  <path d="M260 140 L260 125 L265 125 L265 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M285 140 L285 128 L292 128 L292 140" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
+
+  <!-- River bank -->
+  <path d="M0 145 Q100 142 200 148 Q300 152 400 146 Q500 142 600 148" stroke="#a3b396" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- River water lines -->
+  <path d="M30 158 Q60 155 90 158" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M150 162 Q190 159 230 163" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.25"/>
+  <path d="M280 157 Q320 154 360 158" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M400 164 Q440 160 480 164" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.25"/>
+  <path d="M100 170 Q150 167 200 171" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <path d="M340 172 Q390 168 440 172" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
+  <path d="M500 168 Q540 165 580 169" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.2"/>
+
+  <!-- Ghat steps -->
+  <path d="M220 148 L220 155 L235 155 L235 160 L250 160 L250 165 L265 165" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.4"/>
+  <path d="M330 146 L330 153 L345 153 L345 158 L355 158" stroke="#a3b396" stroke-width="1" fill="none" opacity="0.35"/>
+
+  <!-- Small diyas/lights on the river -->
+  <circle cx="180" cy="160" r="2" fill="#c4a265" opacity="0.4"/>
+  <circle cx="310" cy="158" r="2" fill="#c4a265" opacity="0.5"/>
+  <circle cx="420" cy="162" r="2" fill="#c4a265" opacity="0.35"/>
+  <circle cx="260" cy="168" r="1.5" fill="#c4a265" opacity="0.3"/>
+  <circle cx="470" cy="166" r="1.5" fill="#c4a265" opacity="0.3"/>
+
+  <!-- Birds -->
+  <path d="M120 40 Q125 35 130 40 Q135 35 140 40" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.35"/>
+  <path d="M400 30 Q404 26 408 30 Q412 26 416 30" stroke="#a3b396" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <path d="M450 45 Q453 42 456 45 Q459 42 462 45" stroke="#a3b396" stroke-width="0.7" fill="none" opacity="0.25"/>
+
+  <!-- Sun -->
+  <circle cx="500" cy="30" r="12" stroke="#c4a265" stroke-width="0.8" fill="none" opacity="0.3"/>
+  <line x1="500" y1="14" x2="500" y2="8" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+  <line x1="516" y1="30" x2="522" y2="30" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+  <line x1="484" y1="30" x2="478" y2="30" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+  <line x1="511" y1="19" x2="515" y2="15" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+  <line x1="489" y1="19" x2="485" y2="15" stroke="#c4a265" stroke-width="0.6" opacity="0.25"/>
+</svg>
