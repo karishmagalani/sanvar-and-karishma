@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="photos/mainimage.jpg">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -45,7 +46,7 @@
       --burgundy-soft: #a65d66;
       --sage: #7a8a6e;
       --sage-soft: #a3b396;
-      --deep-green: #3d4f3a;
+      --deep-green: #404d39;
       --border: #ddd5c8;
 
       --font-heading: 'Cormorant Garamond', 'Georgia', serif;
@@ -181,6 +182,7 @@
         flex-direction: column;
         background: rgba(250, 248, 244, 0.97);
         backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
         padding: 1rem 1.5rem 1.5rem; gap: 0;
         border-bottom: 1px solid var(--border);
         transform: translateY(-10px); opacity: 0; pointer-events: none;
@@ -231,19 +233,9 @@
       );
     }
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 24px; left: 24px; right: 24px; bottom: 24px;
-      border: 1px solid var(--gold-light);
-      pointer-events: none; z-index: 3;
-    }
+    .hero::before,
     .hero::after {
-      content: '';
-      position: absolute;
-      top: 30px; left: 30px; right: 30px; bottom: 30px;
-      border: 1px solid rgba(196, 162, 101, 0.25);
-      pointer-events: none; z-index: 3;
+      display: none;
     }
 
     .hero-content { position: relative; z-index: 4; max-width: 700px; }
@@ -319,25 +311,8 @@
     .hero-scroll a { display: inline-flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold-light); }
     .hero-scroll .arrow { width: 1px; height: 36px; background: var(--gold-light); animation: scrollPulse 2.5s ease-in-out infinite; }
 
-    .hero-corner {
-      position: absolute; width: 60px; height: 60px;
-      border-color: var(--terracotta-soft); border-style: solid; border-width: 0;
-      opacity: 0.3; z-index: 5;
-    }
-    .hero-corner--tl { top: 40px; left: 40px; border-top-width: 2px; border-left-width: 2px; }
-    .hero-corner--tr { top: 40px; right: 40px; border-top-width: 2px; border-right-width: 2px; }
-    .hero-corner--bl { bottom: 40px; left: 40px; border-bottom-width: 2px; border-left-width: 2px; }
-    .hero-corner--br { bottom: 40px; right: 40px; border-bottom-width: 2px; border-right-width: 2px; }
+    .hero-corner { display: none; }
 
-    @media (max-width: 600px) {
-      .hero::before { top: 12px; left: 12px; right: 12px; bottom: 12px; }
-      .hero::after { top: 16px; left: 16px; right: 16px; bottom: 16px; }
-      .hero-corner { width: 35px; height: 35px; }
-      .hero-corner--tl { top: 20px; left: 20px; }
-      .hero-corner--tr { top: 20px; right: 20px; }
-      .hero-corner--bl { bottom: 20px; left: 20px; }
-      .hero-corner--br { bottom: 20px; right: 20px; }
-    }
 
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(18px); }
@@ -434,10 +409,12 @@
     .schedule-card {
       background: var(--ivory);
       border: 1px solid var(--gold-pale);
-      padding: 2.2rem 1.5rem 2rem;
+      padding: 1.8rem 1.2rem 1.6rem;
       text-align: center;
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
     }
     .schedule-card::before {
       content: ''; position: absolute;
@@ -518,13 +495,23 @@
       margin: 0 auto;
     }
 
-    .schedule-card--centered {
+    .schedule-sketch {
+      margin-top: auto;
+      padding-top: 0.5rem;
       display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      flex: 1;
+      align-items: flex-end;
     }
-    .schedule-card--centered .schedule-card-date { margin-bottom: 0; }
+    .schedule-sketch img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      opacity: 0.45;
+      mix-blend-mode: multiply;
+      mask-image: radial-gradient(ellipse 92% 85% at 50% 45%, black 45%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 92% 85% at 50% 45%, black 45%, transparent 75%);
+    }
 
     @media (max-width: 768px) {
       .schedule-grid {
@@ -558,31 +545,41 @@
     }
     .venue-section .ornament-line span { color: var(--sage-soft); }
 
+    .venue-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      max-width: 850px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
     .venue-sketch {
-      max-width: 480px;
-      margin: 2rem auto 0;
-      opacity: 0.7;
+      max-width: 100%;
+      margin: 0;
     }
     .venue-sketch img {
       width: 100%;
       height: auto;
+      mask-image: radial-gradient(ellipse 92% 78% at 50% 42%, black 40%, transparent 72%);
+      -webkit-mask-image: radial-gradient(ellipse 92% 78% at 50% 42%, black 40%, transparent 72%);
     }
 
     .venue-weather-note {
       font-family: var(--font-body);
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 300;
       font-style: italic;
       color: rgba(243, 237, 228, 0.7);
       text-align: center;
-      max-width: 440px;
-      margin: 2rem auto 0;
-      line-height: 1.8;
-      padding-top: 1.5rem;
+      max-width: 820px;
+      margin: 1.5rem auto 0;
+      line-height: 1.7;
+      padding-top: 1.2rem;
       border-top: 1px solid rgba(163, 179, 150, 0.2);
     }
     .venue-weather-note span {
-      display: block;
+      display: inline;
       font-family: var(--font-label);
       font-size: 0.55rem;
       font-weight: 400;
@@ -590,12 +587,13 @@
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--sage-soft);
-      margin-bottom: 0.5rem;
+      margin-right: 0.6rem;
     }
 
     .venue-content {
-      max-width: 560px;
-      margin: 0 auto;
+      max-width: none;
+      margin: 0;
+      text-align: left;
     }
     .venue-content p {
       font-family: var(--font-body);
@@ -609,8 +607,32 @@
       font-size: 2rem;
       font-weight: 300;
       color: var(--cream);
-      margin-bottom: 0.8rem;
+      margin-bottom: 1.5rem;
       letter-spacing: 0.03em;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .venue-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        gap: 0;
+      }
+      .venue-content {
+        text-align: center;
+      }
+      .venue-sketch {
+        max-width: 340px;
+        margin: 1.5rem auto 0;
+      }
+      .venue-weather-note {
+        max-width: 440px;
+      }
+      .venue-weather-note span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+      }
     }
 
     /* ========================================
@@ -684,6 +706,8 @@
       text-align: center;
       position: relative;
       transition: transform 0.3s, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
     }
     .wardrobe-card::before {
       content: ''; position: absolute;
@@ -704,6 +728,7 @@
       letter-spacing: 4px;
       color: var(--terracotta);
       margin-bottom: 0.4rem;
+      white-space: nowrap;
     }
 
     .wardrobe-card-event {
@@ -734,6 +759,7 @@
       border-top: 1px solid var(--gold-pale);
     }
 
+    .wardrobe-card-desc { flex: 1; }
     .wardrobe-swatches {
       display: flex;
       justify-content: center;
@@ -1195,6 +1221,84 @@
       .rsvp-section .marigold-decor { width: 85px !important; height: 85px !important; }
     }
     /* ========================================
+       MOBILE RESPONSIVE
+       ======================================== */
+    @media (max-width: 600px) {
+      .section-padding { padding: 3.5rem 1.2rem; }
+      .section-title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+      .section-subtitle { font-size: 0.6rem; letter-spacing: 3px; }
+
+      /* Hero */
+      .hero { padding: 2rem 1rem; }
+      .hero-families { font-size: 0.6rem; letter-spacing: 3px; margin-bottom: 1.8rem; }
+      .hero-tagline { font-size: 1rem; }
+      .hero-names { margin-bottom: 0.4rem; }
+      .hero-names .amp { font-size: 0.28em; margin: 0.2em 0; }
+      .hero-location { font-size: 0.65rem; letter-spacing: 3.5px; }
+      .hero-date { font-size: 1rem; margin-bottom: 1.8rem; }
+
+      /* Countdown */
+      .countdown-grid { gap: 0.8rem; }
+      .countdown-card { padding: 1.1rem 1.2rem; min-width: 70px; }
+      .countdown-number { font-size: 2.2rem; }
+      .countdown-label { font-size: 0.5rem; letter-spacing: 2px; }
+
+      /* Photo breaks */
+      .photo-break { height: 35vh; min-height: 220px; }
+
+      /* Schedule */
+      .schedule-card { padding: 1.8rem 1.2rem 1.6rem; }
+      .schedule-card-title { font-size: 1.4rem; }
+      .schedule-card-name { font-size: 1.05rem; }
+
+      /* Venue */
+      .venue-content p { font-size: 1rem; line-height: 1.8; }
+      .venue-name { font-size: 1.7rem; }
+      .venue-sketch { max-width: 280px; }
+      .weather-badge {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 0.6rem 1rem;
+        gap: 0.4rem;
+      }
+      .weather-temp { font-size: 1.3rem; }
+      .venue-weather-note { font-size: 0.85rem; padding-top: 1rem; margin-top: 1rem; }
+
+      /* Wardrobe */
+      .wardrobe-intro { font-size: 1rem; margin-bottom: 1.8rem; }
+      .wardrobe-card { padding: 1.8rem 1.2rem 1.6rem; }
+      .wardrobe-card-event { font-size: 1.25rem; }
+      .wardrobe-card-desc { font-size: 0.95rem; }
+
+      /* Gift */
+      .gift-message { font-size: clamp(1.2rem, 5vw, 1.5rem); }
+
+      /* RSVP */
+      .rsvp-content p { font-size: 1rem; }
+      .btn { padding: 0.75rem 1.8rem; font-size: 0.6rem; }
+
+      /* Footer */
+      .site-footer { padding: 2.2rem 1.2rem; }
+      .footer-names { font-size: 1.3rem; }
+
+      /* Music toggle — bigger tap target on mobile */
+      .music-toggle { width: 52px; height: 52px; bottom: 18px; right: 18px; }
+    }
+
+    /* Extra small screens (iPhone SE, etc.) */
+    @media (max-width: 375px) {
+      .section-padding { padding: 3rem 1rem; }
+      .hero-names { font-size: clamp(2.6rem, 14vw, 3.2rem); }
+      .countdown-grid { gap: 0.5rem; }
+      .countdown-card { padding: 0.9rem 0.8rem; min-width: 60px; }
+      .countdown-number { font-size: 1.8rem; }
+      .wardrobe-grid { max-width: 290px; }
+      .schedule-grid { max-width: 290px; }
+      .weather-badge { font-size: 0.85rem; }
+    }
+
+    /* ========================================
        MUSIC TOGGLE
        ======================================== */
     .music-toggle {
@@ -1202,22 +1306,24 @@
       bottom: 24px;
       right: 24px;
       z-index: 10000;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
-      border: 1px solid var(--gold-light);
-      background: rgba(250, 248, 244, 0.9);
-      backdrop-filter: blur(8px);
+      border: 1.5px solid var(--gold);
+      background: rgba(250, 248, 244, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 3px;
-      transition: opacity 0.3s, transform 0.3s;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.12);
     }
     .music-toggle:hover {
-      transform: scale(1.08);
+      transform: scale(1.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.16);
     }
     .music-toggle .bar {
       width: 2.5px;
@@ -1245,7 +1351,7 @@
 <body>
 
   <!-- Background music -->
-  <audio id="bgMusic" preload="auto" loop>
+  <audio id="bgMusic" preload="metadata" loop>
     <source src="anywhere-instrumental.mp3" type="audio/mpeg">
   </audio>
   <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
@@ -1432,10 +1538,18 @@
         </div>
 
         <!-- DAY 3 -->
-        <div class="schedule-card schedule-card--centered">
+        <div class="schedule-card">
           <p class="schedule-card-label">Day Three</p>
           <h3 class="schedule-card-title">Farewell</h3>
           <p class="schedule-card-date">Monday, April 20</p>
+          <div class="schedule-card-line"></div>
+          <div class="schedule-card-events">
+            <div class="schedule-card-event">
+              <p class="schedule-card-time">Morning</p>
+              <p class="schedule-card-name">Breakfast &amp; Goodbyes</p>
+            </div>
+          </div>
+          <div class="schedule-sketch"><img src="photos/farewell.png" alt="Aarti lamp sketch" width="569" height="483" loading="lazy"></div>
         </div>
 
       </div>
@@ -1456,26 +1570,27 @@
       <p class="section-subtitle fade-in">Where We'll Be Staying</p>
       <h2 class="section-title fade-in">The Venue</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
+      <p class="venue-name fade-in">Anand Kashi</p>
 
-      <div class="venue-content fade-in">
-        <p class="venue-name">Anand Kashi</p>
-        <p>All wedding events will take place at Anand Kashi in Rishikesh, a serene riverside retreat surrounded by the beauty of the Himalayas. Accommodation for guests will be at Anand Kashi and Roseate Hotel.</p>
-        <div class="weather-badge">
-          <span class="weather-icon">&#9728;&#65039;</span>
-          <div>
-            <p class="weather-text">April in Rishikesh</p>
-            <p class="weather-temp">32&ndash;38&deg;C</p>
+      <div class="venue-grid fade-in">
+        <div class="venue-content">
+          <p>All wedding events will take place at Anand Kashi in Rishikesh, a serene riverside retreat surrounded by the beauty of the Himalayas. Accommodation for guests will be at Anand Kashi and Roseate Hotel.</p>
+          <div class="weather-badge">
+            <span class="weather-icon">&#9728;&#65039;</span>
+            <div>
+              <p class="weather-text">April in Rishikesh</p>
+              <p class="weather-temp">32&ndash;38&deg;C</p>
+            </div>
+            <span style="font-family:var(--font-body); font-size:0.95rem; color:rgba(243,237,228,0.65); margin-left:0.3rem; font-style:italic;">sunny &amp; warm</span>
           </div>
-          <span style="font-family:var(--font-body); font-size:0.95rem; color:rgba(243,237,228,0.65); margin-left:0.3rem; font-style:italic;">sunny &amp; warm</span>
         </div>
-
-        <div class="venue-sketch"><img src="photos/riverside-sketch.svg" alt="Riverside sketch"></div>
-
-        <p class="venue-weather-note">
-          <span>A friendly reminder</span>
-          It's going to be a hot one! Pack your sunglasses, sunscreen, and a hat if you have one. Light, breathable clothing is your best friend and stay hydrated throughout the celebrations
-        </p>
+        <div class="venue-sketch"><img src="photos/sketch2.png" alt="Riverside sketch" width="800" height="441" loading="lazy"></div>
       </div>
+
+      <p class="venue-weather-note fade-in">
+        <span>A friendly reminder</span>
+        It's going to be a hot one! Pack your sunglasses, sunscreen, and a hat if you have one. Light, breathable clothing is your best friend and stay hydrated throughout the celebrations
+      </p>
     </div>
   </section>
 
@@ -1584,14 +1699,13 @@
     <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
     <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
     <div class="container">
-      <p class="section-subtitle fade-in">We Hope You Can Make It</p>
       <h2 class="section-title fade-in">RSVP</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
 
       <div class="rsvp-content fade-in">
-        <p>Please let us know if you're able to join us</p>
+        <p style="font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">We hope you can make it<br><span style="text-transform: none; letter-spacing: 0.5px; font-size: 0.85rem; opacity: 0.8; display: inline-block; margin-top: 0.5rem;">Please let us know if you're able to join us</span></p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFChiyFOk2CUqZVNCwQOuZSojgJKjxYsJw2RuOeALSXG8HKg/viewform?usp=header" target="_blank" rel="noopener" class="btn">RSVP Now</a>
-        <p style="margin-top:1.5rem; margin-bottom:0; font-size:0.95rem; line-height:1.8; opacity:0.85;">
+        <p style="margin-top:1.5rem; margin-bottom:0; font-size:1.15rem; line-height:1.8; opacity:0.85;">
           <strong>The Oberois:</strong> +91-9870411393<br>
           <strong>The Galanis:</strong> +91-9821324321
         </p>
@@ -1601,8 +1715,8 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-orange.svg" alt=""></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt=""></div>
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
     <p class="footer-names">Sanvar &amp; Karishma</p>
     <p class="footer-note">Made with <span>&#9829;</span> love</p>
     <p class="footer-families">The Oberois &amp; Galanis</p>
@@ -1758,16 +1872,52 @@
       var music = document.getElementById('bgMusic');
       var btn = document.getElementById('musicToggle');
       var started = false;
+      var fading = false;
+      var TARGET_VOL = 0.45;
+      var FADE_MS = 1800;
+      var FADE_OUT_MS = 600;
+      var FADE_STEP = 30;
 
-      music.volume = 0.45;
+      music.volume = 0;
       music.currentTime = 18;
+
+      function fadeIn() {
+        fading = true;
+        var step = TARGET_VOL / (FADE_MS / FADE_STEP);
+        var iv = setInterval(function () {
+          if (music.volume + step >= TARGET_VOL) {
+            music.volume = TARGET_VOL;
+            clearInterval(iv);
+            fading = false;
+          } else {
+            music.volume = music.volume + step;
+          }
+        }, FADE_STEP);
+      }
+
+      function fadeOut(cb) {
+        fading = true;
+        var step = music.volume / (FADE_OUT_MS / FADE_STEP);
+        var iv = setInterval(function () {
+          if (music.volume - step <= 0) {
+            music.volume = 0;
+            clearInterval(iv);
+            fading = false;
+            if (cb) cb();
+          } else {
+            music.volume = music.volume - step;
+          }
+        }, FADE_STEP);
+      }
 
       function startMusic() {
         if (started) return;
+        music.volume = 0;
         music.currentTime = 18;
         music.play().then(function () {
           started = true;
           btn.classList.add('playing');
+          fadeIn();
         }).catch(function () {});
       }
 
@@ -1785,14 +1935,19 @@
       // Toggle play/pause
       btn.addEventListener('click', function (e) {
         e.stopPropagation();
+        if (fading) return;
         if (music.paused) {
           if (!started) music.currentTime = 18;
+          music.volume = 0;
           music.play();
           btn.classList.add('playing');
           started = true;
+          fadeIn();
         } else {
-          music.pause();
-          btn.classList.remove('playing');
+          fadeOut(function () {
+            music.pause();
+            btn.classList.remove('playing');
+          });
         }
       });
     })();
