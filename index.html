@@ -1671,7 +1671,7 @@
 <body>
 
   <!-- Background music -->
-  <audio id="bgMusic" preload="metadata" loop>
+  <audio id="bgMusic" preload="auto" loop>
     <source src="anywhere-instrumental.mp3" type="audio/mpeg">
   </audio>
   <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
@@ -1959,12 +1959,17 @@
       var started = false;
       var fading = false;
       var TARGET_VOL = 0.45;
-      var FADE_MS = 1800;
-      var FADE_OUT_MS = 600;
-      var FADE_STEP = 30;
+      var FADE_MS = 300;
+      var FADE_OUT_MS = 500;
+      var FADE_STEP = 20;
+      var START_AT = 18;
 
       music.volume = 0;
-      music.currentTime = 18;
+      // Buffer the whole track up front so playback is instant on first tap
+      try { music.load(); } catch (e) {}
+      function seekIntro() { try { if (music.currentTime < 1) music.currentTime = START_AT; } catch (e) {} }
+      music.addEventListener('loadedmetadata', seekIntro);
+      seekIntro();
 
       function fadeIn() {
         fading = true;
@@ -1997,25 +2002,27 @@
 
       function startMusic() {
         if (started) return;
+        seekIntro();
         music.volume = 0;
-        music.currentTime = 18;
-        music.play().then(function () {
-          started = true;
-          btn.classList.add('playing');
-          fadeIn();
-        }).catch(function () {});
+        var p = music.play();
+        if (p && p.then) {
+          p.then(function () { started = true; btn.classList.add('playing'); fadeIn(); }).catch(function () {});
+        } else {
+          started = true; btn.classList.add('playing'); fadeIn();
+        }
       }
 
-      // Try autoplay immediately
+      // Attempt immediately (works if the browser already trusts the site)
       startMusic();
 
-      // Fallback: start on first user interaction
-      ['click', 'scroll', 'touchstart', 'keydown'].forEach(function (evt) {
-        document.addEventListener(evt, function handler() {
-          startMusic();
-          document.removeEventListener(evt, handler);
-        }, { once: true });
-      });
+      // Otherwise start the instant the visitor first touches the page — pointerdown
+      // fires earlier than click, so there is no perceptible lag.
+      var GESTURES = ['pointerdown', 'touchstart', 'mousedown', 'keydown', 'click', 'scroll'];
+      function kick() {
+        startMusic();
+        if (started) GESTURES.forEach(function (evt) { window.removeEventListener(evt, kick, true); });
+      }
+      GESTURES.forEach(function (evt) { window.addEventListener(evt, kick, { capture: true, passive: true }); });
 
       // Toggle play/pause
       btn.addEventListener('click', function (e) {
