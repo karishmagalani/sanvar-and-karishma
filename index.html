@@ -1651,8 +1651,13 @@
       color: var(--charcoal-soft); line-height: 1.7;
     }
     @media (max-width: 768px) {
-      .events-grid { grid-template-columns: 1fr; max-width: 420px; }
-      .event-card-img { aspect-ratio: 16 / 10; }
+      .events-grid { grid-template-columns: 1fr; max-width: 400px; }
+      /* Show more of each photo (less aggressive crop) so subjects aren't lost */
+      .event-card-img { aspect-ratio: 4 / 3; }
+      /* Aim each crop at its distinctive part so the cards don't look alike */
+      .events-grid .event-card:nth-child(1) .event-card-img img { object-position: center 74%; }
+      .events-grid .event-card:nth-child(2) .event-card-img img { object-position: center 50%; }
+      .events-grid .event-card:nth-child(3) .event-card-img img { object-position: center 82%; }
       .video-card { max-width: 100%; }
     }
 
@@ -1663,7 +1668,7 @@
     }
     @media (max-width: 768px) {
       @supports not (aspect-ratio: 1 / 1) {
-        .event-card-img { height: 220px; }
+        .event-card-img { height: 270px; }
       }
     }
   </style>
@@ -1761,7 +1766,7 @@
       <p class="section-subtitle fade-in">Organised by the Day</p>
       <h2 class="section-title fade-in">The Celebration</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
-      <p class="days-intro fade-in">The gallery is sorted by event, so you can jump straight to the moments you're looking for. Three days came together into three chapters &mdash;</p>
+      <p class="days-intro fade-in">The gallery is sorted by event, so you can jump straight to the parts you were there for. Three days, in three sets &mdash;</p>
 
       <div class="events-grid fade-in">
 
@@ -1771,7 +1776,7 @@
             <p class="schedule-card-label">Day One &middot; Evening</p>
             <h3 class="schedule-card-title">Welcome Dinner</h3>
             <div class="schedule-card-line"></div>
-            <p class="event-card-desc">The Ganga Aarti by the river and the night we all came together &mdash; first hellos, long-awaited hugs, and dinner under the Rishikesh sky.</p>
+            <p class="event-card-desc">The Ganga Aarti at the river, then dinner by the water as everyone arrived and settled in.</p>
           </div>
         </div>
 
@@ -1781,7 +1786,7 @@
             <p class="schedule-card-label">Day Two &middot; Morning</p>
             <h3 class="schedule-card-title">Anand Karaj</h3>
             <div class="schedule-card-line"></div>
-            <p class="event-card-desc">Our wedding ceremony by the river &mdash; the vows, the ardaas, and the quiet, flower-laden morning we became husband and wife.</p>
+            <p class="event-card-desc">The morning ceremony by the Ganga &mdash; the hymns, the ardaas, and everyone gathered close.</p>
           </div>
         </div>
 
@@ -1791,7 +1796,7 @@
             <p class="schedule-card-label">Day Two &middot; Evening</p>
             <h3 class="schedule-card-title">Pheras</h3>
             <div class="schedule-card-line"></div>
-            <p class="event-card-desc">The sacred fire, the seven rounds, and everything after &mdash; the sparkle, the music, and a dance floor that refused to quit.</p>
+            <p class="event-card-desc">The fire, the seven rounds, and the evening that followed &mdash; marigolds, music, and plenty of dancing.</p>
           </div>
         </div>
 
