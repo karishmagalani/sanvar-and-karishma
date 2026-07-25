@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanvar & Karishma | Wedding Celebration</title>
-  <meta name="description" content="Sanvar & Karishma invite you to celebrate their wedding in Rishikesh, India. April 18 to 20, 2026.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#8b4049">
+  <title>Sanvar & Karishma | Our Wedding Photos</title>
+  <meta name="description" content="Our wedding photos are here. View the gallery and find yourself in seconds — from our celebration in Rishikesh, India, April 2026.">
 
   <!-- Open Graph (WhatsApp, iMessage, Facebook, LinkedIn etc.) -->
-  <meta property="og:title" content="Sanvar & Karishma | Save the Date">
-  <meta property="og:description" content="You're invited to celebrate our wedding in Rishikesh, India. April 18 to 20, 2026 &#10043;">
+  <meta property="og:title" content="Sanvar & Karishma | Our Wedding Photos">
+  <meta property="og:description" content="The wedding photos are finally here &#127881; View the gallery and find your moments from Rishikesh, April 2026.">
   <meta property="og:image" content="https://kgso.in/photos/og-image.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1791">
@@ -18,14 +19,13 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sanvar & Karishma | Save the Date">
-  <meta name="twitter:description" content="You're invited to celebrate our wedding in Rishikesh, India. April 18 to 20, 2026 &#10043;">
+  <meta name="twitter:title" content="Sanvar & Karishma | Our Wedding Photos">
+  <meta name="twitter:description" content="The wedding photos are finally here &#127881; View the gallery and find your moments from Rishikesh, April 2026.">
   <meta name="twitter:image" content="https://kgso.in/photos/og-image.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="photos/mainimage.jpg">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1346,6 +1346,326 @@
       0% { height: 4px; }
       100% { height: 18px; }
     }
+
+    /* ========================================
+       POST-WEDDING — PHOTOS ANNOUNCEMENT
+       ======================================== */
+    .photos-section {
+      background: var(--burgundy);
+      color: var(--cream);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .photos-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--terracotta-soft), transparent);
+    }
+    .photos-section .section-subtitle { color: var(--terracotta-soft); }
+    .photos-section .section-title { color: var(--cream); }
+    .photos-section .ornament-line::before,
+    .photos-section .ornament-line::after {
+      background: linear-gradient(90deg, transparent, var(--terracotta-soft), transparent);
+    }
+    .photos-section .ornament-line span { color: var(--terracotta-soft); }
+    .photos-names {
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .photos-meta {
+      font-family: var(--font-label);
+      font-size: 0.68rem; font-weight: 300;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--terracotta-soft);
+      margin-bottom: 0.6rem;
+    }
+    .photos-thanks {
+      font-family: var(--font-body);
+      font-size: 1rem; font-style: italic; font-weight: 300;
+      color: rgba(243, 237, 228, 0.8);
+      margin-bottom: 2.5rem;
+    }
+    .photos-lead {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.4vw, 2.1rem);
+      font-weight: 300; font-style: italic;
+      color: rgba(243, 237, 228, 0.92);
+      max-width: 580px; margin: 0 auto 1.8rem; line-height: 1.6;
+    }
+    .photos-section .btn { border-color: var(--gold-light); color: var(--gold-light); }
+    .photos-section .btn:hover { background: var(--gold-light); color: var(--burgundy); }
+    .photos-section .btn-xl {
+      background: var(--gold-light);
+      color: var(--burgundy);
+      border-color: var(--gold-light);
+      font-size: 0.92rem; letter-spacing: 2.5px; line-height: 1.4;
+      padding: 1.25rem 2.8rem; border-width: 1.5px;
+      max-width: 440px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+      margin-top: 0.2rem;
+    }
+    .photos-section .btn-xl:hover { background: var(--gold); border-color: var(--gold); color: var(--warm-white); }
+
+    /* Two-column layout: button + video (left), how-to (right) */
+    .photos-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "cta howto" "video howto";
+      gap: 1.6rem 3rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .cta-block { grid-area: cta; text-align: center; }
+    .video-block { grid-area: video; }
+    .howto-block {
+      grid-area: howto; text-align: left; align-self: center;
+      border-left: 1px solid rgba(218, 201, 160, 0.28);
+      padding-left: 2.6rem;
+    }
+    .howto-sub {
+      font-family: var(--font-label); font-size: 0.6rem; font-weight: 400;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--terracotta-soft); margin-bottom: 0.4rem;
+    }
+    .howto-title {
+      font-family: var(--font-heading); font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+      font-weight: 300; color: var(--cream); margin-bottom: 1.3rem; line-height: 1.1;
+    }
+    .howto-steps { list-style: none; margin: 0 0 1.3rem; padding: 0; display: flex; flex-direction: column; gap: 0.9rem; }
+    .howto-step { display: flex; gap: 0.9rem; align-items: flex-start; }
+    .howto-num {
+      flex: none; width: 27px; height: 27px; border-radius: 50%;
+      border: 1px solid var(--gold-light); color: var(--gold-light);
+      font-family: var(--font-heading); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center; line-height: 1; margin-top: 2px;
+    }
+    .howto-step p { font-family: var(--font-body); font-size: 1rem; font-weight: 300; color: rgba(243, 237, 228, 0.9); line-height: 1.55; }
+    .howto-step strong { color: var(--cream); font-weight: 500; }
+    .howto-tips { display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.1rem; }
+    .howto-tip { font-family: var(--font-body); font-size: 0.95rem; font-weight: 300; color: rgba(243, 237, 228, 0.82); line-height: 1.55; padding-left: 0.9rem; border-left: 2px solid var(--gold); }
+    .howto-tip strong { color: var(--gold-light); font-weight: 500; }
+    .howto-note { font-family: var(--font-body); font-size: 0.9rem; font-weight: 300; font-style: italic; color: rgba(243, 237, 228, 0.7); line-height: 1.55; }
+    .howto-note strong { color: var(--gold-light); font-style: normal; font-weight: 500; }
+
+    @media (max-width: 768px) {
+      .photos-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas: "cta" "howto" "video";
+        gap: 1.8rem; margin-top: 1.2rem;
+      }
+      .howto-block { border-left: none; padding-left: 0; border-top: 1px solid rgba(218, 201, 160, 0.28); padding-top: 1.5rem; }
+    }
+    @media (max-width: 600px) {
+      /* Keep the button + how-to on a single phone screen */
+      .photos-section.section-padding { padding-top: 4rem; padding-bottom: 2.6rem; }
+      .photos-section .btn-xl { font-size: 0.78rem; letter-spacing: 1.8px; padding: 0.95rem 1.8rem; }
+      .photos-names { font-size: clamp(1.65rem, 7vw, 2.3rem); margin-bottom: 0.35rem; }
+      .photos-meta { font-size: 0.56rem; letter-spacing: 1.5px; margin-bottom: 0.4rem; }
+      .photos-thanks { font-size: 0.92rem; margin-bottom: 0.9rem; }
+      .photos-layout { margin-top: 0.8rem; gap: 1.2rem; }
+      .photos-lead { font-size: 1.2rem; margin-bottom: 0.8rem; }
+      .photos-fun { display: none; }
+      .howto-block { padding-top: 1.1rem; }
+      .howto-sub { margin-bottom: 0.3rem; }
+      .howto-title { font-size: 1.4rem; margin-bottom: 0.9rem; }
+      .howto-steps { gap: 0.7rem; margin-bottom: 0.9rem; }
+      .howto-step p { font-size: 0.95rem; line-height: 1.5; }
+      .howto-tips { gap: 0.6rem; margin-bottom: 0; }
+      .howto-tip { font-size: 0.9rem; line-height: 1.5; }
+      .howto-note { display: none; } /* secondary — hidden on phones to keep one screen */
+    }
+    .photos-fun {
+      font-family: var(--font-body); font-size: 1.05rem; font-style: italic;
+      color: rgba(243, 237, 228, 0.72);
+      margin-top: 2rem;
+    }
+    .photos-section .marigold-decor.pos-left {
+      top: 20px; left: -25px; width: 150px; height: 150px;
+      transform: rotate(-25deg); opacity: 0.16;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.2);
+    }
+    .photos-section .marigold-decor.pos-right {
+      bottom: 15px; right: -20px; width: 135px; height: 135px;
+      transform: rotate(35deg) scaleX(-1); opacity: 0.16;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.08)) brightness(1.2);
+    }
+
+    /* Hero CTA button */
+    .hero-cta { opacity: 0; animation: fadeUp 1s ease 1.45s forwards; margin-bottom: 2.2rem; }
+
+    /* ========================================
+       HOW TO VIEW — steps + tips
+       ======================================== */
+    .howto-section { background: var(--warm-white); position: relative; overflow: hidden; }
+    .howto-section::before {
+      content: ''; position: absolute;
+      top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem; max-width: 760px; margin: 0 auto 2.5rem;
+    }
+    .step-card {
+      background: var(--ivory); border: 1px solid var(--gold-pale);
+      padding: 2rem 1.6rem; position: relative; text-align: center;
+    }
+    .step-card::before {
+      content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px;
+      border: 1px solid rgba(196, 162, 101, 0.15); pointer-events: none;
+    }
+    .step-number {
+      font-family: var(--font-heading); font-size: 2.8rem; font-weight: 300;
+      color: var(--gold); line-height: 1; margin-bottom: 0.6rem;
+    }
+    .step-text {
+      font-family: var(--font-body); font-size: 1.1rem; font-weight: 300;
+      color: var(--charcoal-soft); line-height: 1.6;
+    }
+    .step-text strong { color: var(--charcoal); font-weight: 500; }
+    .tips-wrap { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .tip-note {
+      background: var(--gold-pale);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem; text-align: left;
+      font-family: var(--font-body); font-size: 1.05rem; font-weight: 300;
+      color: var(--charcoal-soft); line-height: 1.7;
+    }
+    .tip-note strong { color: var(--charcoal); font-weight: 500; }
+    .tip-label {
+      display: block; font-family: var(--font-label); font-size: 0.55rem;
+      font-weight: 400; text-transform: uppercase; letter-spacing: 3px;
+      color: var(--gold-dark); margin-bottom: 0.4rem;
+    }
+    .download-note {
+      max-width: 660px; margin: 2.5rem auto 0; text-align: center;
+      font-family: var(--font-body); font-size: 1.1rem; font-weight: 300;
+      color: var(--charcoal-soft); line-height: 1.8;
+    }
+    .download-note strong { color: var(--burgundy); font-weight: 500; }
+    .howto-section .marigold-decor.pos-left {
+      top: 30px; left: -35px; width: 140px; height: 140px;
+      transform: rotate(-15deg); opacity: 0.28;
+    }
+    .howto-section .marigold-decor.pos-right {
+      bottom: 30px; right: -30px; width: 130px; height: 130px;
+      transform: rotate(22deg) scaleX(-1); opacity: 0.28;
+    }
+
+    /* ========================================
+       THE DAYS — event buckets
+       ======================================== */
+    .days-section {
+      background: linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+      position: relative; overflow: hidden;
+    }
+    .days-section::before {
+      content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    }
+    .days-intro {
+      font-family: var(--font-body); font-size: 1.15rem; font-weight: 300; font-style: italic;
+      color: var(--charcoal-soft); text-align: center; max-width: 640px;
+      margin: 0 auto 2.5rem; line-height: 1.8;
+    }
+    .days-section .marigold-decor.pos-left {
+      top: 20px; left: -35px; width: 150px; height: 150px;
+      transform: rotate(-18deg); opacity: 0.3;
+    }
+    .days-section .marigold-decor.pos-right {
+      bottom: 20px; right: -30px; width: 140px; height: 140px;
+      transform: rotate(22deg) scaleX(-1); opacity: 0.3;
+    }
+
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+
+    /* ========================================
+       VIDEO CARD (muted; song keeps playing)
+       ======================================== */
+    .video-card {
+      position: relative;
+      max-width: 460px;
+      margin: 0 auto 1rem;
+      padding: 6px;
+      background: rgba(0, 0, 0, 0.18);
+      border: 1px solid var(--gold-light);
+      box-shadow: 0 14px 44px rgba(0, 0, 0, 0.28);
+    }
+    .video-el {
+      width: 100%; display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #000;
+    }
+    .video-expand {
+      position: absolute; bottom: 15px; right: 15px;
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--gold-light);
+      background: rgba(42, 37, 34, 0.5);
+      color: var(--gold-light);
+      cursor: pointer; font-size: 1rem; line-height: 1;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+    }
+    .video-expand:hover { background: var(--gold-light); color: var(--burgundy); transform: scale(1.08); }
+    .video-caption {
+      font-family: var(--font-label);
+      font-size: 0.6rem; font-weight: 400;
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--terracotta-soft);
+      margin: 0 auto 2.6rem;
+    }
+
+    /* ========================================
+       EVENT CARDS (with photos)
+       ======================================== */
+    .events-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem; max-width: 1000px; margin: 0 auto;
+    }
+    .event-card {
+      background: var(--warm-white);
+      border: 1px solid var(--gold-pale);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .event-card:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(42, 37, 34, 0.09); }
+    .event-card-img { aspect-ratio: 4 / 5; overflow: hidden; }
+    .event-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .event-card:hover .event-card-img img { transform: scale(1.045); }
+    .event-card-body {
+      padding: 1.6rem 1.3rem 1.9rem; text-align: center;
+      display: flex; flex-direction: column; flex: 1;
+    }
+    .event-card-desc {
+      font-family: var(--font-body); font-size: 1rem; font-weight: 300;
+      color: var(--charcoal-soft); line-height: 1.7;
+    }
+    @media (max-width: 768px) {
+      .events-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .event-card-img { aspect-ratio: 16 / 10; }
+      .video-card { max-width: 100%; }
+    }
+
+    /* Fallback for browsers without aspect-ratio (older Safari < 15) */
+    @supports not (aspect-ratio: 1 / 1) {
+      .video-el { height: 252px; }
+      .event-card-img { height: 380px; }
+    }
+    @media (max-width: 768px) {
+      @supports not (aspect-ratio: 1 / 1) {
+        .event-card-img { height: 220px; }
+      }
+    }
   </style>
 </head>
 <body>
@@ -1371,312 +1691,118 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="header-nav" id="headerNav">
-        <li><a href="#schedule">Schedule</a></li>
-        <li><a href="#venue">Venue</a></li>
-        <li><a href="#rsvp">RSVP</a></li>
+        <li><a href="#photos">Photos</a></li>
+        <li><a href="#days">The Days</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="photos/mainimage.jpg" alt="Sanvar and Karishma">
-    </div>
-    <div class="hero-corner hero-corner--tl"></div>
-    <div class="hero-corner hero-corner--tr"></div>
-    <div class="hero-corner hero-corner--bl"></div>
-    <div class="hero-corner hero-corner--br"></div>
-    <div class="marigold-decor pos-bl"><img src="photos/marigolds/marigold-orange.svg" alt=""></div>
-    <div class="marigold-decor pos-br"><img src="photos/marigolds/marigold-yellow.svg" alt=""></div>
-    <div class="marigold-decor pos-tl"><img src="photos/marigolds/marigold-small.svg" alt=""></div>
-    <div class="marigold-decor pos-tr"><img src="photos/marigolds/marigold-small.svg" alt=""></div>
-
-    <div class="hero-content">
-      <p class="hero-families">The Oberois &amp; Galanis Welcome You</p>
-      <p class="hero-tagline">request the pleasure of your company at the wedding celebration of</p>
-
-      <h1 class="hero-names">
-        Sanvar
-        <span class="amp">&amp;</span>
-        Karishma
-      </h1>
-
-      <div class="hero-ornament">
-        <div class="ornament-line"><span>&#10043;</span></div>
-      </div>
-
-      <p class="hero-location">Rishikesh, India</p>
-      <p class="hero-date">April 18 to 20, 2026</p>
-
-      <div class="hero-scroll">
-        <a href="#countdown"><span class="arrow"></span></a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Marigold garland -->
-  <div class="marigold-garland" aria-hidden="true">
-    <img src="photos/marigolds/marigold-orange.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-yellow.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-small.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-orange.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-yellow.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-small.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-orange.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-yellow.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-small.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-orange.svg" alt="">
-    <span class="marigold-garland-string"></span>
-    <img src="photos/marigolds/marigold-yellow.svg" alt="">
-  </div>
-
-  <!-- COUNTDOWN -->
-  <section class="countdown-section section-padding" id="countdown">
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+  <!-- PHOTOS — the main event -->
+  <section class="photos-section section-padding" id="photos">
     <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-center"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
     <div class="container fade-in">
-      <h2 class="section-title">Countdown</h2>
-      <div class="ornament-line"><span>&#10043;</span></div>
+      <p class="section-subtitle">The Oberois &amp; Galanis</p>
+      <h2 class="photos-names">Sanvar &amp; Karishma</h2>
+      <p class="photos-meta">Rishikesh, India &nbsp;&middot;&nbsp; April 18 to 20, 2026</p>
+      <p class="photos-thanks">thank you for celebrating with us</p>
 
-      <div class="countdown-grid">
-        <div class="countdown-card">
-          <div class="countdown-number" id="countdown-days">---</div>
-          <div class="countdown-label">Days</div>
+      <div class="photos-layout">
+
+        <!-- Button first -->
+        <div class="cta-block">
+          <p class="photos-lead">The wedding photos are finally here.</p>
+          <a href="https://eshantrajuphotography.pic-time.com/qGoU3EIz43bqR" target="_blank" rel="noopener" class="btn btn-xl">Click Here to View Photos from Rishikesh</a>
+          <p class="photos-fun">And yes &mdash; the dance floor ones are all in there. &#128131;</p>
         </div>
-        <div class="countdown-card">
-          <div class="countdown-number" id="countdown-hours">--</div>
-          <div class="countdown-label">Hours</div>
-        </div>
-        <div class="countdown-card">
-          <div class="countdown-number" id="countdown-minutes">--</div>
-          <div class="countdown-label">Minutes</div>
-        </div>
-        <div class="countdown-card">
-          <div class="countdown-number" id="countdown-seconds">--</div>
-          <div class="countdown-label">Seconds</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Photo break -->
-  <div class="photo-break fade-in">
-    <img src="photos/Karishma and Sanvar-33.jpg" alt="The family together" loading="lazy">
-  </div>
-
-  <!-- SCHEDULE -->
-  <section class="schedule-section section-padding" id="schedule">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-bottom"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
-    <div class="container">
-      <p class="section-subtitle fade-in">Three Days of Celebration</p>
-      <h2 class="section-title fade-in">Schedule of Events</h2>
-      <div class="ornament-line fade-in"><span>&#10043;</span></div>
-
-      <div class="schedule-grid fade-in">
-
-        <!-- DAY 1 -->
-        <div class="schedule-card">
-          <p class="schedule-card-label">Day One</p>
-          <h3 class="schedule-card-title">Arrival &amp; Welcome</h3>
-          <p class="schedule-card-date">Saturday, April 18</p>
-          <div class="schedule-card-line"></div>
-          <div class="schedule-card-events">
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">Afternoon</p>
-              <p class="schedule-card-name">Guests Arrive</p>
-            </div>
-            <div class="schedule-card-dot"></div>
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">5:00 PM</p>
-              <p class="schedule-card-name">Ganga Aarti</p>
-            </div>
-            <div class="schedule-card-dot"></div>
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">7:00 PM</p>
-              <p class="schedule-card-name">Welcome Dinner</p>
-            </div>
+        <!-- How to view (right) -->
+        <div class="howto-block">
+          <p class="howto-sub">Find Yourself in Seconds</p>
+          <h3 class="howto-title">How to View Your Photos</h3>
+          <ol class="howto-steps">
+            <li class="howto-step"><span class="howto-num">1</span><p>On the gallery home page, tap <strong>Find Your Favorite Moments</strong>, then <strong>Search Now</strong>.</p></li>
+            <li class="howto-step"><span class="howto-num">2</span><p>Under <strong>Search by people</strong>, scroll the grid, tap your face, and hit <strong>Apply</strong>.</p></li>
+          </ol>
+          <div class="howto-tips">
+            <p class="howto-tip"><strong>Don't miss any:</strong> the tool sometimes makes several face cards for the same person &mdash; tap every version of you.</p>
+            <p class="howto-tip"><strong>Can't find your face?</strong> Tap the camera icon at the top-left of the grid and upload a selfie &mdash; it finds you automatically.</p>
           </div>
+          <p class="howto-note">Downloads come in web and high res &mdash; <strong>grab high res</strong> for printing. The gallery won't stay up forever, so download soon.</p>
         </div>
 
-        <!-- DAY 2 -->
-        <div class="schedule-card">
-          <p class="schedule-card-label">Day Two</p>
-          <h3 class="schedule-card-title">The Wedding</h3>
-          <p class="schedule-card-date">Sunday, April 19</p>
-          <div class="schedule-card-line"></div>
-          <div class="schedule-card-events">
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">9:00 AM</p>
-              <p class="schedule-card-name">Anand Karaj<br><span style="font-size:0.85em; opacity:0.75; font-style:italic;">at the Gurudwara</span></p>
-            </div>
-            <div class="schedule-card-dot"></div>
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">5:00 PM</p>
-              <p class="schedule-card-name">Pheras</p>
-            </div>
-            <div class="schedule-card-dot"></div>
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">7:30 PM</p>
-              <p class="schedule-card-name">Let's Celebrate!</p>
-            </div>
+        <!-- Video (left, below button) -->
+        <div class="video-block">
+          <div class="video-card">
+            <video id="clip" class="video-el" muted loop autoplay playsinline webkit-playsinline preload="metadata" poster="photos/celebration-poster.jpg">
+              <source src="photos/celebration.mp4" type="video/mp4">
+            </video>
+            <button class="video-expand" id="videoExpand" aria-label="Expand video" title="Expand">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3M8 21H5a2 2 0 0 1-2-2v-3m18 0v3a2 2 0 0 1-2 2h-3"/></svg>
+            </button>
           </div>
-        </div>
-
-        <!-- DAY 3 -->
-        <div class="schedule-card">
-          <p class="schedule-card-label">Day Three</p>
-          <h3 class="schedule-card-title">Farewell</h3>
-          <p class="schedule-card-date">Monday, April 20</p>
-          <div class="schedule-card-line"></div>
-          <div class="schedule-card-events">
-            <div class="schedule-card-event">
-              <p class="schedule-card-time">Morning</p>
-              <p class="schedule-card-name">Breakfast &amp; Goodbyes</p>
-            </div>
-          </div>
-          <div class="schedule-sketch"><img src="photos/farewell.png" alt="Aarti lamp sketch" width="569" height="483" loading="lazy"></div>
+          <p class="video-caption">A little moment from the weekend &mdash; tap to expand</p>
         </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- Photo break -->
   <div class="photo-break fade-in" style="max-height: 600px; height: 55vh;">
-    <img src="photos/all pooja.jpg" alt="Pooja ceremony" loading="lazy" style="object-position: center 30%;">
+    <img src="photos/break-venue-dusk.jpg" alt="The riverside venue in Rishikesh at dusk" loading="lazy" style="object-position: center 60%;">
   </div>
 
-  <!-- VENUE / STAY -->
-  <section class="venue-section section-padding" id="venue">
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
+  <!-- THE DAYS -->
+  <section class="days-section section-padding" id="days">
+    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
+    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
     <div class="container">
-      <p class="section-subtitle fade-in">Where We'll Be Staying</p>
-      <h2 class="section-title fade-in">The Venue</h2>
+      <p class="section-subtitle fade-in">Organised by the Day</p>
+      <h2 class="section-title fade-in">The Celebration</h2>
       <div class="ornament-line fade-in"><span>&#10043;</span></div>
-      <p class="venue-name fade-in">Anand Kashi</p>
+      <p class="days-intro fade-in">The gallery is sorted by event, so you can jump straight to the moments you're looking for. Three days came together into three chapters &mdash;</p>
 
-      <div class="venue-grid fade-in">
-        <div class="venue-content">
-          <p>All wedding events will take place at Anand Kashi in Rishikesh, a serene riverside retreat surrounded by the beauty of the Himalayas. Accommodation for guests will be at Anand Kashi and Roseate Hotel.</p>
-          <div class="weather-badge">
-            <span class="weather-icon">&#9728;&#65039;</span>
-            <div>
-              <p class="weather-text">April in Rishikesh</p>
-              <p class="weather-temp">32&ndash;38&deg;C</p>
-            </div>
-            <span style="font-family:var(--font-body); font-size:0.95rem; color:rgba(243,237,228,0.65); margin-left:0.3rem; font-style:italic;">sunny &amp; warm</span>
+      <div class="events-grid fade-in">
+
+        <div class="event-card">
+          <div class="event-card-img"><img src="photos/event-welcome-dinner.jpg" alt="Riverside setting for the welcome celebration" loading="lazy"></div>
+          <div class="event-card-body">
+            <p class="schedule-card-label">Day One &middot; Evening</p>
+            <h3 class="schedule-card-title">Welcome Dinner</h3>
+            <div class="schedule-card-line"></div>
+            <p class="event-card-desc">The Ganga Aarti by the river and the night we all came together &mdash; first hellos, long-awaited hugs, and dinner under the Rishikesh sky.</p>
           </div>
         </div>
-        <div class="venue-sketch"><img src="photos/sketch2.png" alt="Riverside sketch" width="800" height="441" loading="lazy"></div>
-      </div>
 
-      <p class="venue-weather-note fade-in">
-        <span>A friendly reminder</span>
-        It's going to be a hot one! Pack your sunglasses, sunscreen, and a hat if you have one. Light, breathable clothing is your best friend and stay hydrated throughout the celebrations
-      </p>
-    </div>
-  </section>
-
-  <!-- WARDROBE -->
-  <section class="wardrobe-section section-padding" id="wardrobe">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-left"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-mid-right"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
-    <div class="container">
-      <p class="section-subtitle fade-in">What to Wear</p>
-      <h2 class="section-title fade-in">Wardrobe Guide</h2>
-      <div class="ornament-line fade-in"><span>&#10043;</span></div>
-
-      <p class="wardrobe-intro fade-in">Rishikesh in April is gloriously sunny so think light fabrics, breathable fits, and sunglasses at the ready</p>
-
-      <div class="wardrobe-grid fade-in">
-
-        <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day One &middot; 5 PM</p>
-          <h3 class="wardrobe-card-event">Ganga Aarti</h3>
-          <p class="wardrobe-card-desc">Smart casuals, breezy kurtas, and easy silhouettes in warm sunset tones</p>
-          <div class="wardrobe-swatches">
-            <span class="wardrobe-swatch" style="background:#e07830;"></span>
-            <span class="wardrobe-swatch" style="background:#d4956a;"></span>
-            <span class="wardrobe-swatch" style="background:#c4a265;"></span>
-            <span class="wardrobe-swatch" style="background:#e8c088;"></span>
+        <div class="event-card">
+          <div class="event-card-img"><img src="photos/event-anand-karaj.jpg" alt="The floral mandap overlooking the Ganga" loading="lazy"></div>
+          <div class="event-card-body">
+            <p class="schedule-card-label">Day Two &middot; Morning</p>
+            <h3 class="schedule-card-title">Anand Karaj</h3>
+            <div class="schedule-card-line"></div>
+            <p class="event-card-desc">Our wedding ceremony by the river &mdash; the vows, the ardaas, and the quiet, flower-laden morning we became husband and wife.</p>
           </div>
-          <p class="wardrobe-card-tip">Light layers for the riverside</p>
         </div>
 
-        <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day One &middot; 7 PM</p>
-          <h3 class="wardrobe-card-event">Welcome Dinner</h3>
-          <p class="wardrobe-card-desc">Soft pastels like blush, lavender, powder blue, and mint</p>
-          <div class="wardrobe-swatches">
-            <span class="wardrobe-swatch" style="background:#e8b8c0;"></span>
-            <span class="wardrobe-swatch" style="background:#c0b0d8;"></span>
-            <span class="wardrobe-swatch" style="background:#a8c8e0;"></span>
-            <span class="wardrobe-swatch" style="background:#b0d8c0;"></span>
+        <div class="event-card">
+          <div class="event-card-img"><img src="photos/event-pheras.jpg" alt="Riverside dining by the Ganga with marigolds" loading="lazy"></div>
+          <div class="event-card-body">
+            <p class="schedule-card-label">Day Two &middot; Evening</p>
+            <h3 class="schedule-card-title">Pheras</h3>
+            <div class="schedule-card-line"></div>
+            <p class="event-card-desc">The sacred fire, the seven rounds, and everything after &mdash; the sparkle, the music, and a dance floor that refused to quit.</p>
           </div>
-          <p class="wardrobe-card-tip">Keep it light and lovely</p>
-        </div>
-
-        <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day Two &middot; 9 AM</p>
-          <h3 class="wardrobe-card-event">Anand Karaj</h3>
-          <p class="wardrobe-card-desc">Soft, elegant hues like ivory, cream, sage, and other delicate tones</p>
-          <div class="wardrobe-swatches">
-            <span class="wardrobe-swatch" style="background:#f5f0e6;"></span>
-            <span class="wardrobe-swatch" style="background:#e8e0d0;"></span>
-            <span class="wardrobe-swatch" style="background:#b8c8a8;"></span>
-            <span class="wardrobe-swatch" style="background:#d8d0c0;"></span>
-          </div>
-          <p class="wardrobe-card-tip">Head coverings will be provided</p>
-        </div>
-
-        <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day Two &middot; 5 PM</p>
-          <h3 class="wardrobe-card-event">Pheras</h3>
-          <p class="wardrobe-card-desc">Gold and golden hues, shimmer, shine, and all things gilded</p>
-          <div class="wardrobe-swatches">
-            <span class="wardrobe-swatch" style="background:#c4a265;"></span>
-            <span class="wardrobe-swatch" style="background:#d4b878;"></span>
-            <span class="wardrobe-swatch" style="background:#e8d098;"></span>
-            <span class="wardrobe-swatch" style="background:#a88840;"></span>
-          </div>
-          <p class="wardrobe-card-tip">Think radiant and regal</p>
-        </div>
-
-        <div class="wardrobe-card">
-          <p class="wardrobe-card-day">Day Two &middot; 7:30 PM</p>
-          <h3 class="wardrobe-card-event">Let's Celebrate!</h3>
-          <p class="wardrobe-card-desc">Bling, sparkle, and your most fabulous look because this is the night to go all out</p>
-          <div class="wardrobe-swatches">
-            <span class="wardrobe-swatch" style="background:#c42858;"></span>
-            <span class="wardrobe-swatch" style="background:#2828a0;"></span>
-            <span class="wardrobe-swatch" style="background:#e8b020;"></span>
-            <span class="wardrobe-swatch" style="background:#18a068;"></span>
-          </div>
-          <p class="wardrobe-card-tip">The bolder the better!</p>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Photo break -->
+  <div class="photo-break fade-in" style="max-height: 600px; height: 55vh;">
+    <img src="photos/break-aerial.jpg" alt="Aerial view of the celebration by the Ganga" loading="lazy" style="object-position: center 55%;">
+  </div>
 
   <!-- GIFT MESSAGE -->
   <section class="gift-section section-padding">
@@ -1684,32 +1810,8 @@
     <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-orange.svg" alt="" loading="lazy"></div>
     <div class="container fade-in">
       <div class="ornament-line"><span>&#10043;</span></div>
-      <p class="gift-message">Your presence at our wedding is the greatest gift of all</p>
+      <p class="gift-message">Thank you for showing up and going all out with us. We couldn't have asked for a better crew.</p>
       <div class="ornament-line"><span>&#10043;</span></div>
-    </div>
-  </section>
-
-  <!-- Photo break -->
-  <div class="photo-break fade-in" style="max-height: 600px; height: 55vh;">
-    <img src="photos/Karishma and Sanvar-07.jpg" alt="Sanvar and Karishma" loading="lazy" style="object-position: center 55%;">
-  </div>
-
-  <!-- RSVP -->
-  <section class="rsvp-section section-padding" id="rsvp">
-    <div class="marigold-decor pos-left"><img src="photos/marigolds/marigold-yellow.svg" alt="" loading="lazy"></div>
-    <div class="marigold-decor pos-right"><img src="photos/marigolds/marigold-small.svg" alt="" loading="lazy"></div>
-    <div class="container">
-      <h2 class="section-title fade-in">RSVP</h2>
-      <div class="ornament-line fade-in"><span>&#10043;</span></div>
-
-      <div class="rsvp-content fade-in">
-        <p style="font-family: var(--font-label); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">We hope you can make it<br><span style="text-transform: none; letter-spacing: 0.5px; font-size: 0.85rem; opacity: 0.8; display: inline-block; margin-top: 0.5rem;">Please let us know if you're able to join us</span></p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdFChiyFOk2CUqZVNCwQOuZSojgJKjxYsJw2RuOeALSXG8HKg/viewform?usp=header" target="_blank" rel="noopener" class="btn">RSVP Now</a>
-        <p style="margin-top:1.5rem; margin-bottom:0; font-size:1.15rem; line-height:1.8; opacity:0.85;">
-          <strong>The Oberois:</strong> +91-9870411393<br>
-          <strong>The Galanis:</strong> +91-9821324321
-        </p>
-      </div>
     </div>
   </section>
 
@@ -1725,23 +1827,6 @@
   <script>
     (function () {
       'use strict';
-
-      var WEDDING_DATE = new Date('2026-04-18T15:00:00');
-      var daysEl = document.getElementById('countdown-days');
-      var hoursEl = document.getElementById('countdown-hours');
-      var minutesEl = document.getElementById('countdown-minutes');
-      var secondsEl = document.getElementById('countdown-seconds');
-
-      function updateCountdown() {
-        var diff = WEDDING_DATE - new Date();
-        if (diff <= 0) { daysEl.textContent = '0'; hoursEl.textContent = '0'; minutesEl.textContent = '0'; secondsEl.textContent = '0'; return; }
-        daysEl.textContent = Math.floor(diff / 86400000);
-        hoursEl.textContent = Math.floor((diff % 86400000) / 3600000);
-        minutesEl.textContent = Math.floor((diff % 3600000) / 60000);
-        secondsEl.textContent = Math.floor((diff % 60000) / 1000);
-      }
-      updateCountdown();
-      setInterval(updateCountdown, 1000);
 
       var fadeEls = document.querySelectorAll('.fade-in');
       if ('IntersectionObserver' in window) {
@@ -1949,6 +2034,32 @@
             btn.classList.remove('playing');
           });
         }
+      });
+    })();
+
+    // ==========================
+    // Video expand — stays muted so the song keeps playing
+    // ==========================
+    (function () {
+      var clip = document.getElementById('clip');
+      var expandBtn = document.getElementById('videoExpand');
+      if (!clip || !expandBtn) return;
+      function expand() {
+        if (clip.requestFullscreen) clip.requestFullscreen();
+        else if (clip.webkitEnterFullscreen) clip.webkitEnterFullscreen();
+        else if (clip.webkitRequestFullscreen) clip.webkitRequestFullscreen();
+      }
+      expandBtn.addEventListener('click', function (e) { e.stopPropagation(); expand(); });
+      clip.addEventListener('click', expand);
+      // Keep the clip muted even if a device tries to unmute on fullscreen
+      clip.addEventListener('volumechange', function () { if (!clip.muted) clip.muted = true; });
+
+      // Belt-and-suspenders inline autoplay for iOS/Safari
+      clip.muted = true;
+      function tryPlay() { var p = clip.play(); if (p && p.catch) p.catch(function () {}); }
+      tryPlay();
+      ['touchstart', 'click', 'scroll'].forEach(function (evt) {
+        document.addEventListener(evt, function h() { tryPlay(); document.removeEventListener(evt, h); }, { once: true, passive: true });
       });
     })();
   </script>
